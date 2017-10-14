@@ -1,17 +1,17 @@
 # JavaScript Best Practices
 
-Best practices and stuff
+![JavaScript](https://www.unixstickers.com/image/cache/data/stickers/js/js.sh-180x180.png)
+
+Best practices for JavaScript development
 
 ## [Open presentation slides](#)
 
-## Focus of this lesson
-{The focus or purpose of this workshop}
+## Focus of this workshop
+The focus of this workshop is best practices for JavaScript development. Rather than laying out "rules" to follow we are going to take a look a the _why_ behind the best practices, so that you can decide for yourself what's best for you.
 
 ## What you need
-- List
-- Of
-- Required
-- Software
+- A browser: [Chrome](https://www.google.com/chrome)
+- A code editor: [Atom](https://atom.io/), [VS Code](https://code.visualstudio.com/)
 
 ## How to get started
 
