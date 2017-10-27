@@ -119,12 +119,14 @@ So, in what cases does this apply? Let's have a look at the `return` statement:
 ```JavaScript
 function addTwoNumbers(a, b) {
   return
-  (a+b);
+  (a+b)
 }
 ```
 
 What do you think the output of this function call will be if called with the parameters
-`1` and `2`? `3`? The answer is `undefined`. Why is this?
+`1` and `2`? Will it be `3`?
+
+The answer is `undefined`. Why is this?
 
 The `return` statement expects an expression as the next token at _the same line_. In this case, the expression `(a+b)` is placed on the next line after the `return` statement,
 so in order to correct this syntax error a semicolon is inserted after the return statement:
