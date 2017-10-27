@@ -156,8 +156,54 @@ This problem applies to the following statements:
 - `yield`
 - postfix `++` or `–`
 
-:pencil2: Open `exercise1.html` both in Chrome and Atom. Make sure changes to the HTML file are reflected in the browser.
+For reference: [The ECMAScript 5.1 spec - ASI rules](http://www.ecma-international.org/ecma-262/5.1/#sec-7.9)
 
-[ECMAScript 5.1 spec - ASI rules](http://www.ecma-international.org/ecma-262/5.1/#sec-7.9)
+# 2.0.0 - Linting
+
+According to Wikipedia, the definition of a _lint_ in the context of software is:
+
+> Generically, lint or a **linter** is any tool that detects and flags errors in programming languages, including stylistic errors
+
+Because of the nature of JavaScript, with it's syntax rarities and potential pitfalls,
+using a tool to analyse your JavaScript will help you write better code.
+
+There are several tools available, for this workshop we have chosen [ESLint](https://eslint.org/) because of it's configurability and number of linting rules available.
+
+# 2.0.1 - ESLint overview
+
+<img src="https://camo.githubusercontent.com/e69fbfc8dc529fda880b1890f43fa0aec6ab5cb6/687474703a2f2f65736c696e742e6f72672f696d672f6c6f676f2e737667" style="width:100px"/>
+
+ESLint will analyse your JavaScript code and return a set of errors or warnings depending
+on which linting rules you have configured it to use.
+
+ESLint divides it's rules into several categories. From the [rules documentation](https://eslint.org/docs/rules/):
+- **Possible errors** - These rules relate to possible syntax or logic errors in JavaScript code
+- **Best Practices** - These rules relate to better ways of doing things to help you avoid problems
+- **Variables** - These rules relate to variable declarations
+- **Node.js and CommonJS** - These rules relate to code running in Node.js, or in browsers with CommonJS
+- **Stylistic Issues** - These rules relate to style guidelines, and are therefore quite subjective
+- **ECMAScript 6** - These rules relate to ES6, also known as ES2015
+
+This workshop will not go through all possible rules (as there are too many), instead we will focus on a small subset of rules that illustrate the best practices we are going to cover in the exercises.
+
+# 2.0.1 - Getting ESLint up and running
+
+ESLint can be run in multiple ways:
+- From the command line
+- Via a code editor (many integrations available)
+- Via a build tool
+- Via source control
+- Via tests
+- In a browser
+- ...and more
+
+For this workshop we are going to run ESLint in [Atom](https://atom.io/) via a package called [`linter-eslint`](https://atom.io/packages/linter-eslint).
+
+To install `linter-eslint`, you can use the Install tab in the Settings View. Open up the Settings View using <kbd>Ctrl</kbd>+<kbd>,</kbd> (Windows) or <kbd>Cmd</kbd>+<kbd>,</kbd> (macOS), click on the "Install" tab and type `linter-eslint` into the box under Install Packages.
+
+![Installing linter-eslint](../images/ex1-installing-eslint.png)
+
+The `linter-eslint` package will come up with an "Install" button. Clicking that will download the package and install it.
+
 
 ### [Go to exercise 2 ==>](../exercise-2/README.md)
