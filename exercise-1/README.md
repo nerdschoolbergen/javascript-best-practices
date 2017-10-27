@@ -238,6 +238,6 @@ console.log(x + y)
 If everything is configured correctly, Atom will notify you that the code
 you just entered has some linting errors:
 
-![Linting error](../images/ex1-linting-error.png)
+<img src="../images/ex1-linting-error.png" width="450"/>
 
 ### [Go to exercise 2 ==>](../exercise-2/README.md)
