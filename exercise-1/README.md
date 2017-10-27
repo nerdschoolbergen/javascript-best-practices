@@ -36,9 +36,9 @@ Rule #1 from the JavaScript spesification states:
 What does this mean? Let's break down the terms:
 - **Parsing**: The process of converting your code into a _syntax tree_ before compiling it.
 - **Token**: A token is a piece of code, for example `var`, `x`, `=`, and so on
-- **Offending token**: A piece of code that cannot be logically placed after the previous token
+- **Offending token**: A piece of code that cannot be placed after the previous piece of code
 - **Grammar**: The syntax rules that JavaScript follows
-- **LineTerminator**: A line break in the code
+- **LineTerminator**: A line break in the code (new line)
 
 Let's name each of the conditions of the first rule a and b:
 
@@ -110,6 +110,49 @@ console.log('hello world');
 
 ### 1.1.3 ASI Rule #3
 
+The last rule is difficult to read from the spesification, but the gist of it is:
+
+> If a line break is encountered at where it is not allowed according to the grammar rules, insert a semicolon
+
+So, in what cases does this apply? Let's have a look at the `return` statement:
+
+```JavaScript
+function addTwoNumbers(a, b) {
+  return
+  (a+b);
+}
+```
+
+What do you think the output of this function call will be if called with the parameters
+`1` and `2`? `3`? The answer is `undefined`. Why is this?
+
+The `return` statement expects an expression as the next token at _the same line_. In this case, the expression `(a+b)` is placed on the next line after the `return` statement,
+so in order to correct this syntax error a semicolon is inserted after the return statement:
+
+```JavaScript
+function addTwoNumbers(a, b) {
+  return;
+  (a+b);
+}
+```
+
+The `return` statement in the first line now returns `undefined` and then exits the function. Therefore, the `(a+b)` expression on the next line will never be returned.
+
+The following code would work as intended as the semicolon will be inserted after the expression becasue of rule #1.b:
+
+```JavaScript
+function addTwoNumbers(a, b) {
+  return (a+b)
+}
+```
+
+This problem applies to the following statements:
+- `continue`
+- `break`
+- `return`
+- `throw`
+- `yield`
+- postfix `++` or `–`
 
 :pencil2: Open `exercise1.html` both in Chrome and Atom. Make sure changes to the HTML file are reflected in the browser.
 
