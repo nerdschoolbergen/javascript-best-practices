@@ -171,7 +171,7 @@ There are several tools available, for this workshop we have chosen [ESLint](htt
 
 # 2.0.1 - ESLint overview
 
-<img src="https://camo.githubusercontent.com/e69fbfc8dc529fda880b1890f43fa0aec6ab5cb6/687474703a2f2f65736c696e742e6f72672f696d672f6c6f676f2e737667" style="width:100px"/>
+<img src="https://camo.githubusercontent.com/e69fbfc8dc529fda880b1890f43fa0aec6ab5cb6/687474703a2f2f65736c696e742e6f72672f696d672f6c6f676f2e737667" width="100"/>
 
 ESLint will analyse your JavaScript code and return a set of errors or warnings depending
 on which linting rules you have configured it to use.
