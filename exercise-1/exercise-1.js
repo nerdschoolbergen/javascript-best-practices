@@ -1,3 +1,6 @@
-var x = 1
-var y = 2
-console.log(x + y)
+function myFunctionReturningAnObject() {
+  return {
+    name: "Mad Max",
+    age: 1
+  };
+}

@@ -240,4 +240,66 @@ you just entered has some linting errors:
 
 <img src="../images/ex1-linting-error.png" width="450"/>
 
+Correct the errors, and the red dots on the left side should disappear.
+
+# 3.0.0 - Curly braces
+
+If you are used to C# or Java syntax the following curly brace code style (called Allman style) will seem like the correct way to place opening curly braces:
+
+```JavaScript
+function myFancyFunction()
+{
+  return "Important stuff";
+}
+
+function myOtherFunction()
+{
+  // Do stuff
+}
+
+function myFunctionReturningAnObject()
+{
+  return
+  {
+    name: "Mad Max"
+    age: 35
+  };
+}
+```
+
+Because of ASI the return statement in the last function will get a semicolon inserted and the code will break because of the opening curly brace on the next line. Enter the code above into the `exercise-1.js` file. You will notice that Atom will notify you that the code has syntax errors.
+
+Fix the syntax error by placing the opening curly brace on the same
+line as the the return statement:
+
+```JavaScript
+function myFunctionReturningAnObject()
+{
+  return {
+    name: "Mad Max"
+    age: 35
+  };
+}
+```
+
+Notice that now you have two different styles of placing curly braces, the Allman (C#/Java) style for the functions and the open curly brace on same line style (required because of the return statement).
+
+This creates confusion, so we can configure ESLint to enforce a curly brace style via the [`brace style`](https://eslint.org/docs/rules/brace-style) rule:
+
+```json
+{
+    "rules": {
+      "semi": "error",
+      "brace-style": "error"
+    }
+}
+```
+
+The `brace-style` rule defaults to a style called _one true brace style_, which is the most common brace style in JavaScript and corresponds with how the return statement is formatted.
+
+Open the `exercise-1.js` code again and you should see that Atom will
+notify you that the opening curly braces for the functions are misplaced.
+
+Fix the styling error by moving the opening curly braces.
+
 ### [Go to exercise 2 ==>](../exercise-2/README.md)
