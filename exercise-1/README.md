@@ -205,5 +205,39 @@ To install `linter-eslint`, you can use the Install tab in the Settings View. Op
 
 The `linter-eslint` package will come up with an "Install" button. Clicking that will download the package and install it.
 
+# 2.0.2 - Configuring ESLint
+
+By default no rules are enabled in ESLint. In order to configure ESLint we need to create a file named `.eslintrc.json` in the `exercise-1` folder. To make things easier we have already added this file for you.
+
+Add the following to enable the [`semi` rule](https://eslint.org/docs/rules/semi):
+
+```json
+{
+    "rules": {
+        "semi": "error"
+    }
+}
+```
+
+This rule enforces consistent use of semicolons.
+
+# 2.0.3 - Running ESLint while editing code
+
+First you need to make sure that you have opened the root folder containing the git repository ("javascript-best-practices") as a _project folder_. Choose _File -> Open_ from the menu and select the `javascript-best-practices` repository directory.
+
+Using the Tree View on the left side of Atom window, open `exercise-1.js` inside the `exercise-1` folder. (If the Tree View is not showing, select _View -> Toggle Tree View_ from the menu.)
+
+Enter the following JavaScript code:
+
+```JavaScript
+var x = 1
+var y = 2
+console.log(x + y)
+```
+
+If everything is configured correctly, Atom will notify you that the code
+you just entered has some linting errors:
+
+![Linting error](../images/ex1-linting-error.png)
 
 ### [Go to exercise 2 ==>](../exercise-2/README.md)
