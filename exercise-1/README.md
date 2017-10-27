@@ -30,8 +30,8 @@ There are three ASI rules:
 
 Rule #1 from the JavaScript spesification states:
 > When, as the program is parsed from left to right, a token (called the offending token) is encountered that is not allowed by any production of the grammar, then a semicolon is automatically inserted before the offending token if one or more of the following conditions is true:
-  - The offending token is separated from the previous token by at least one LineTerminator.
-  - The offending token is }.
+>  - The offending token is separated from the previous token by at least one LineTerminator.
+>  - The offending token is }.
 
 What does this mean? Let's break down the terms:
 - **Parsing**: The process of converting your code into a _syntax tree_ before compiling it.
