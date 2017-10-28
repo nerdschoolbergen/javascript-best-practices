@@ -7,8 +7,8 @@ You will learn about:
  -  Curly braces
 
 ## Required software and tools for this exercise
-- [Google Chrome]()
-- The Atom code editor -  [Atom](https://atom.io/)
+- [Chrome](https://www.google.com/chrome)
+- [Atom](https://atom.io/)
 
 ## 1.1 - Semicolons
 
