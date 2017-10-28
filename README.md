@@ -10,7 +10,6 @@ Best practices for JavaScript development
 The focus of this workshop is best practices for JavaScript development. Rather than laying out "rules" to follow we are going to take a look a the _why_ behind the best practices, so that you can decide for yourself what's best for you.
 
 ## What you need
-- [Chrome](https://www.google.com/chrome)
 - [Atom](https://atom.io/)
 - [Node.js](https://nodejs.org)
 

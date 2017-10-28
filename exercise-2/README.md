@@ -5,8 +5,8 @@ You will learn about:
  - Variables
 
 ## Required software and tools for this exercise
-- [Chrome](https://www.google.com/chrome)
 - [Atom](https://atom.io/)
+- [Node.js](https://nodejs.org)
 
 ## 1.1 - Equality
 
@@ -73,4 +73,4 @@ else {
 
 :question: What do you think the output of this code will be?
 
-:pencil2: Try typing it into the `exercise-3.js` file and run it in Chrome.
+:pencil2: Try typing it into the `exercise-2.js` file and run it in using Node.js.

@@ -7,8 +7,23 @@ You will learn about:
  -  Curly braces
 
 ## Required software and tools for this exercise
-- [Chrome](https://www.google.com/chrome)
 - [Atom](https://atom.io/)
+- [Node.js](https://nodejs.org)
+
+## 0.0 - Dev environment setup
+
+:exclamation: In this workshop we are going to use the Node.js to run JavaScript code from the command line.
+
+:pencil2: After installing [Node.js](https://nodejs.org), open up a command line window (Command Prompt or Powershell in Windows or Terminal in macOS) and type the following command:
+
+```bash
+node -v
+```
+
+This should output something like this:
+```
+v8.8.1
+```
 
 ## 1.1 - Semicolons
 
@@ -124,7 +139,27 @@ function addTwoNumbers(a, b) {
 console.log('Result:', addTwoNumbers(1,2))
 ```
 
-:question: What do you think the output of this code will be? Try adding the code above to `exercise-1.js` and open `exercise-1.html` in Chrome. Open dev tools and look at the console output.
+:question: What do you think the output of this code will be?
+
+:pencil2: Try adding the code above to `exercise-1.js`.
+
+To run the code using Node.js, do the following:
+
+1. Open a command line window (Command Prompt or Powershell in Windows or Terminal in macOS)
+2. Navigate into the folder where you cloned this repository, for example `c:\mygitrepos\javascript-best-practices\` in Windows or `/mygitrepos/javascript-best-practices/` in macOS/Linux.
+3. Run the `exercise-1.js` file by typing:
+
+Windows:
+```powershell
+node exercise-1\exercise-1.js
+```
+
+macOS/Linux:
+```powershell
+node exercise-1/exercise-1.js
+```
+
+The output of the program should now be printed on the next line after the `node` command.
 
 :question: The answer is `undefined`. Why is this?
 
@@ -141,8 +176,7 @@ console.log('Result:', addTwoNumbers(1,2))
 
 :book: The `return` statement in the first line now returns `undefined` and then exits the function. Therefore, the `(a+b)` expression on the next line will never be returned.
 
-
-:pencil2: Try modifying the code so that the `addTwoNumbers()` function returns the correct result.
+:pencil2: Try modifying the code so that the `addTwoNumbers()` function returns the correct result. Run the code again using Node.js to verify the result.
 
 :book: This problem applies to the following statements:
 - `continue`
