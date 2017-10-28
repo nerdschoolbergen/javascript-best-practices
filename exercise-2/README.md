@@ -64,8 +64,7 @@ function areEqual(x, y) {
 
 if(areEqual(a, b)) {
   console.log('a and b are equal!');
-}
-else {
+} else {
   console.log('a and b are not equal :(');
 }
 ```
