@@ -4,15 +4,15 @@ This exercise will focus on JavaScript syntax.
 You will learn about:
  - Semicolons and Automatic Semicolon Insertion (ASI)
  - Linting
- - Curly braces
+ -  Curly braces
 
 ## Required software and tools for this exercise
 - [Google Chrome]()
-- A code editor -  [Atom](https://atom.io/) or [VS Code](https://code.visualstudio.com/)
+- The Atom code editor -  [Atom](https://atom.io/)
 
 ## 1.1 - Semicolons
 
-You may have heard that "semicolons are optional in JavaScript", or that "semicolons are required". Well, both statements are true in some cases.
+:book: You may have heard that "semicolons are optional in JavaScript", or that "semicolons are required". Well, both statements are true in some cases.
 
 For example, the following code is perfectly valid JavaScript:
 
@@ -22,13 +22,13 @@ var y = 2
 console.log(x + y)
 ```
 
-So why does this work? JavaScript has a built in feature called _Automatic Semicolon Insertion (ASI)_. ASI inserts, as the name implies, semicolons in your code automatically before it is run. This means semicolons are technically optional in JavaScript in many cases. However, there are some cases where not using semicolons can lead to problems. So in order to fully understand how this feature works, we will go through the rules.
+:book: So why does this work? JavaScript has a built in feature called _Automatic Semicolon Insertion (ASI)_. ASI inserts, as the name implies, semicolons in your code automatically before it is run. This means semicolons are technically optional in JavaScript in many cases. However, there are some cases where not using semicolons can lead to problems. So in order to fully understand how this feature works, we will go through the rules.
 
 There are three ASI rules:
 
 ### 1.1.1 - ASI Rule #1
 
-Rule #1 from the JavaScript spesification states:
+:book: Rule #1 from the JavaScript spesification states:
 > When, as the program is parsed from left to right, a token (called the offending token) is encountered that is not allowed by any production of the grammar, then a semicolon is automatically inserted before the offending token if one or more of the following conditions is true:
 >  - The offending token is separated from the previous token by at least one LineTerminator.
 >  - The offending token is }.
@@ -44,7 +44,7 @@ Let's name each of the conditions of the first rule a and b:
 
 #### ASI Rule 1.a
 
-The first condition of ASI Rule #1 states:
+:book: The first condition of ASI Rule #1 states:
 > The offending token is separated from the previous token by at least one LineTerminator.
 
 So, in what cases will this be true? Consider the following code:
@@ -56,7 +56,7 @@ if(x){console.log(x)}
 console.log(y)
 ```
 
-If we read this code from the left to the right, the last token before line 1 ends is `1`.
+:book: If we read this code from the left to the right, the last token before line 1 ends is `1`.
 The next token is on line 2, hence it is separated from the last token by a "LineTerminator", or a line break. The next token is `var`, which is not valid grammar if you place it after the previous token: `1 var`.
 
 Because of this first condition, a semicolon will therefore be inserted at the end of the first line and the second line (because `2 if` is not valid syntax):
@@ -70,7 +70,7 @@ console.log('hello world')
 
 #### ASI Rule 1.b
 
-The second condition of ASI Rule #1 states:
+:book: The second condition of ASI Rule #1 states:
 > The offending token is }.
 
 Let's look at the code from after applying rule 1.a:
@@ -110,7 +110,7 @@ console.log('hello world');
 
 ### 1.1.3 ASI Rule #3
 
-The last rule is difficult to read from the spesification, but the gist of it is:
+:book: The last rule is difficult to read from the spesification, but the gist of it is:
 
 > If a line break is encountered at where it is not allowed according to the grammar rules, insert a semicolon
 
@@ -121,14 +121,14 @@ function addTwoNumbers(a, b) {
   return
   (a+b)
 }
+console.log('Result:', addTwoNumbers(1,2))
 ```
 
-What do you think the output of this function call will be if called with the parameters
-`1` and `2`? Will it be `3`?
+:question: What do you think the output of this code will be? Try adding the code above to `exercise-1.js` and open `exercise-1.html` in Chrome. Open dev tools and look at the console output.
 
-The answer is `undefined`. Why is this?
+:question: The answer is `undefined`. Why is this?
 
-The `return` statement expects an expression as the next token at _the same line_. In this case, the expression `(a+b)` is placed on the next line after the `return` statement,
+:book: The `return` statement expects an expression as the next token at _the same line_. In this case, the expression `(a+b)` is placed on the next line after the `return` statement,
 so in order to correct this syntax error a semicolon is inserted after the return statement:
 
 ```JavaScript
@@ -136,19 +136,15 @@ function addTwoNumbers(a, b) {
   return;
   (a+b);
 }
+console.log('Result:', addTwoNumbers(1,2))
 ```
 
-The `return` statement in the first line now returns `undefined` and then exits the function. Therefore, the `(a+b)` expression on the next line will never be returned.
+:book: The `return` statement in the first line now returns `undefined` and then exits the function. Therefore, the `(a+b)` expression on the next line will never be returned.
 
-The following code would work as intended as the semicolon will be inserted after the expression becasue of rule #1.b:
 
-```JavaScript
-function addTwoNumbers(a, b) {
-  return (a+b)
-}
-```
+:pencil2: Try modifying the code so that the `addTwoNumbers()` function returns the correct result.
 
-This problem applies to the following statements:
+:book: This problem applies to the following statements:
 - `continue`
 - `break`
 - `return`
@@ -156,9 +152,13 @@ This problem applies to the following statements:
 - `yield`
 - postfix `++` or `–`
 
-For reference: [The ECMAScript 5.1 spec - ASI rules](http://www.ecma-international.org/ecma-262/5.1/#sec-7.9)
+:bulb: The only exception to ASI Rule #3 is `for` statements, ASI never inserts semicolons inside the parenthesis of a `for` statement.
 
-# 2.0.0 - Linting
+:exclamation: **Best practice #1:** _Use semicolons_. If you insist on not using them, learn the ASI rules well to avoid trouble.
+
+:bulb: For reference: [The ECMAScript 5.1 spec - ASI rules](http://www.ecma-international.org/ecma-262/5.1/#sec-7.9)
+
+# 1.2 - Linting
 
 According to Wikipedia, the definition of a _lint_ in the context of software is:
 
@@ -169,7 +169,7 @@ using a tool to analyse your JavaScript will help you write better code.
 
 There are several tools available, for this workshop we have chosen [ESLint](https://eslint.org/) because of it's configurability and number of linting rules available.
 
-# 2.0.1 - ESLint overview
+# 1.2.1 - ESLint overview
 
 <img src="https://camo.githubusercontent.com/e69fbfc8dc529fda880b1890f43fa0aec6ab5cb6/687474703a2f2f65736c696e742e6f72672f696d672f6c6f676f2e737667" width="100"/>
 
@@ -186,7 +186,7 @@ ESLint divides it's rules into several categories. From the [rules documentation
 
 This workshop will not go through all possible rules (as there are too many), instead we will focus on a small subset of rules that illustrate the best practices we are going to cover in the exercises.
 
-# 2.0.1 - Getting ESLint up and running
+# 1.2.2 - Getting ESLint up and running
 
 ESLint can be run in multiple ways:
 - From the command line
@@ -205,7 +205,7 @@ To install `linter-eslint`, you can use the Install tab in the Settings View. Op
 
 The `linter-eslint` package will come up with an "Install" button. Clicking that will download the package and install it.
 
-# 2.0.2 - Configuring ESLint
+# 1.2.3 - Configuring ESLint
 
 By default no rules are enabled in ESLint. In order to configure ESLint we need to create a file named `.eslintrc.json` in the `exercise-1` folder. To make things easier we have already added this file for you.
 
@@ -221,7 +221,7 @@ Add the following to enable the [`semi` rule](https://eslint.org/docs/rules/semi
 
 This rule enforces consistent use of semicolons.
 
-# 2.0.3 - Running ESLint while editing code
+# 1.2.4 - Running ESLint while editing code
 
 First you need to make sure that you have opened the root folder containing the git repository ("javascript-best-practices") as a _project folder_. Choose _File -> Open_ from the menu and select the `javascript-best-practices` repository directory.
 
@@ -242,7 +242,7 @@ you just entered has some linting errors:
 
 Correct the errors, and the red dots on the left side should disappear.
 
-# 3.0.0 - Curly braces
+# 1.3 - Curly braces
 
 If you are used to C# or Java syntax the following curly brace code style (called Allman style) will seem like the correct way to place opening curly braces:
 
