@@ -287,7 +287,7 @@ line as the the return statement.
 }
 ```
 
-:book: The `brace-style` rule defaults to a style called _one true brace style_, which is the most common brace style in JavaScript and corresponds with how the return statement is formatted.
+:book: The [`brace style`](https://eslint.org/docs/rules/brace-style) rule defaults to a style called _one true brace style_, which is the most common brace style in JavaScript and corresponds with how the return statement is formatted.
 
 :pencil2: Open the `exercise-1.js` code again and you should see that Atom will
 notify you that the opening curly braces for the functions are misplaced.
