@@ -39,7 +39,7 @@ console.log(myVariable);
 
 :book: The code now runs, and outputs `undefined` because the `myVariable` variable has no value.
 
-## 1.0.2 - Hoisting
+## 1.0.2 - Variable hoisting
 
 :pencil2: Let's try moving the `myVariable` definition to the buttom:
 ```JavaScript
@@ -80,5 +80,45 @@ var myVariable = 'Hello Nerdschool';
 Next we are going to look at why this can cause problems when dealing with functions.
 
 ## 2.0 - Functions and hoisting
+
+:book: In the last section we looked at how JavaScript hoists variable _creation_ to the top of the scope _where it is defined_.
+
+:book: Each time you create a function in JavaScript, a _scope_ is also created.
+
+Consider the following code that prints two different variables, one declared inside the function and one outside:
+```JavaScript
+var myMessage = 'A message';
+
+function printStuff() {
+  var anotherMessage = 'Testing 123';
+  console.log(anotherMessage);
+  console.log(myMessage);
+}
+printStuff();
+```
+
+:pencil2: Remove all code from `exercise-3.js` from the previous task,  add the code above, then run it in Node.js.
+
+:book: The code outputs both variables because the `printStuff()` function has access to all variables created in the _same scope_ or the scope _outside the function_. This also applies when you nest functions inside functions.
+
+:book: Let's try changing the code a bit by adding a `console.log()` statement to the bottom:
+
+```JavaScript
+var myMessage = 'A message';
+
+function printStuff() {
+  var anotherMessage = 'Testing 123';
+  console.log(anotherMessage);
+  console.log(myMessage);
+}
+printStuff();
+console.log(anotherMessage); // add this line
+```
+
+:question: What do you think will happen if we run the code now?
+
+:pencil2: Modify the code in `exercise-3.js` and run it in Node.js.
+
+:book: Because the `anotherMessage` variable is declared _inside_ the `printStuff()` function, we cannot access it from the outside like we are trying to in the last line.
 
 ## 3.0 - Global variables and scope
