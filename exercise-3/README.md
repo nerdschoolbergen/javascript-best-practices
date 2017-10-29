@@ -11,11 +11,10 @@ You will learn about:
 
 ## 1.0 - Variables and hoisting
 
-:book: Let's have a look at how declaring and initialising variables work in JavaScript.
+:book: Let's have a look at how defining and initialising variables work in JavaScript.
 
 Consider the following code:
 ```JavaScript
-var myVariable;
 console.log(myVariable);
 ```
 
@@ -23,20 +22,42 @@ console.log(myVariable);
 
 :pencil2: Try adding the code to `exercise-3.js` and run it in Node.js.
 
-:book: Why did this happen? Because the `myVariable` variable is uninitalised, the code returns `undefined`.
+:book: Why did this happen? Because the `myVariable` variable i undefined, the code throws an `ReferenceError`.
 
-:pencil2: Try moving the variable declaration to the bottom like this:
+:pencil2: Let's try adding a `myVariable` variable definition at the top:
+
+```JavaScript
+var myVariable;
+console.log(myVariable);
+```
+
+:question: What do you think happens now?
+
+:pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
+
+:book: The code now runs, and outputs `undefined` because the `myVariable` variable has no value.
+
+:pencil2: Now try assigning a value to the variable:
 
 ```JavaScript
 console.log(myVariable);
-var myVariable;
+var myVariable = 'Hello Nerdschool!';
 ```
 
 :question: How do you think the code behaves now?
 
 :pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
 
-:book: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "hoists" or lifts all variables to the top of its scope before running the code, the code will behave in the same way as before.
+:question: Why does it still behave the same as before we moved the variable declaration?
+
+:exclamation: Because JavaScript "hoists" or lifts all variable _creations_ to the top of the current scope before running the code, the `myVariable` variable will be created and set to `undefined` at the top:
+```JavaScript
+var myVariable;
+console.log(myVariable);
+var myVariable = 10;
+```
+
+Next we are going to look at why this can cause problems when dealing with functions.
 
 ## 2.0 - Functions and hoisting
 
