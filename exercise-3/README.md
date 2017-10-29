@@ -3,6 +3,7 @@
 You will learn about:
  - Variables and hoisting
  - Function scope and hoisting
+ - Strict mode
  - Global variables and scope
 
 ## Required software and tools for this exercise
@@ -221,7 +222,7 @@ console.log(b);
 
 :pencil2: Try these rules out by adding them to the `exercise-3\.eslintrc.json` file:
 
-```
+```json
 {
     "rules": {
       "semi": "error",
@@ -252,4 +253,93 @@ function myFunc(input) {
 
 :pencil2: Try modifying the code to get rid of all linting errors.
 
-## 3.0 - Global variables and scope
+## 3.0 - Strict mode
+
+## 3.1.0 - What the heck is Strict mode?
+
+[Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) is a switch we can enable to force a, well, stricter version of the language. It will turn several warnings into errors and forbid you from doing certain bad practices that the language allows by default. It was introduced as a way to make the language more predictable and robust.
+
+Strict mode is opt-in, meaning we must enable it ourselves when we want to enforce it.
+
+- Strict mode is used on functions or entire scripts.
+- When enabled in scripts, the `'use strict'` statement must come before any other statement.
+- When enabled in functions, the `'use strict'` statement must be the first line in the function
+
+The below script has strict mode enabled:
+
+```js
+'use strict';
+
+// ... other code
+```
+
+The below function has strict mode enabled:
+
+```js
+function foo() {
+  'use strict';
+
+  // ... other code
+}
+```
+
+> JavaScript _modules_ introduced in the newest version of the language is strict by default so we don't have to enable it explicitly.
+
+:pencil2: Let's look at a code example related to the code from previous tasks. Remove all code from `exercise-3.js` and add the following:
+
+```JavaScript
+function print(input) {
+  stringToPrint = input; // here we implicitly create a global var
+  console.log(stringToPrint);
+}
+
+print('Hi Nerdschool');
+console.log(stringToPrint);
+```
+
+:pencil2: Run the code in Node.js.
+
+:book: The code runs normally without throwing an error when you implicitly create the `stringToPrint` global variable inside the function.
+
+:pencil2: Try adding `use strict;`:
+
+```JavaScript
+`use strict`;
+function print(input) {
+  stringToPrint = input; // here we implicitly create a global var
+  console.log(stringToPrint);
+}
+
+print('Hi Nerdschool');
+console.log(stringToPrint);
+```
+
+:pencil2: Run the code in Node.js.
+
+:book: The code now throws an `ReferenceError` when accessing a variable that has not been defined.
+
+
+:important: **Best practice #5:** Use strict mode to avoid hoisting problems
+
+:bulb: There are way to many details about strict mode to cover here, but if you have trouble sleeping one night, you can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
+
+# 3.2.0 - Linting rules for strict mode
+
+We can force the use of Strict mode in ESLint by adding the [`strict`](https://eslint.org/docs/rules/strict) rule to `exercise-3\.eslintrc.json`:
+
+```json
+{
+    "rules": {
+      "semi": "error",
+      "brace-style": "error",
+      "eqeqeq": "error",
+      "no-use-before-define": "error",
+      "vars-on-top": "error",
+      "strict": ["error", "global"]
+    }
+}
+```
+
+:pencil2: Try removing the `use strict;` directive from  `exercise-3.js` and see what happens.
+
+## 4.0 - Global variables and scope
