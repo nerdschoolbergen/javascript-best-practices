@@ -282,7 +282,7 @@ console.log(myPrivateVar);
 
 This is because the IIFE creates a new scope inside it, where you can declare all the variables you want without worrying about polluting the global scope.
 
-:important: **Best practice** Use IIFEs around your code to prevent polluting the global scope.
+:exclamation: **Best practice** Use IIFEs around your code to prevent polluting the global scope.
 
 ### 2.2.0 - ES Modules
 
