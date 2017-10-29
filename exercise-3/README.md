@@ -48,9 +48,7 @@ var myVariable = 'Hello Nerdschool!';
 
 :pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
 
-:question: Why does it still behave the same as before we moved the variable declaration?
-
-:exclamation: Because JavaScript "hoists" or lifts all variable _creations_ to the top of the current scope before running the code, the `myVariable` variable will be created and set to `undefined` at the top:
+:exclamation: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "hoists" or lifts all variable _creations_ to the top of the current scope before running the code, the `myVariable` variable will be created and set to `undefined` at the top:
 ```JavaScript
 var myVariable;
 console.log(myVariable);
