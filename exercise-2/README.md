@@ -107,7 +107,7 @@ if(areEqual(a, b)) {
 
 # 1.1.3 - Linting rules for equality
 
-:book: To help you remember to use the correct way of testing for equality, we can set up ESLint to enforce strict mode using the [`eqeqeq`]() rule.
+:book: To help you remember to use the correct way of testing for equality, we can set up ESLint to enforce strict mode using the [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq) rule.
 
 :pencil2: Add the `eqeqeq`-rule to `\exercise-2\.eslintrc.json`. It should look like this:
 
