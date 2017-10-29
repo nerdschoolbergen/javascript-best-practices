@@ -53,7 +53,7 @@ var myVariable;
 
 :exclamation: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "hoists" or lifts all variable _creations_ to the top of the current scope before running the code, the `myVariable` variable will be created and set to `undefined` at the top:
 ```JavaScript
-var myVariable; // hoisted variable
+var myVariable; // hoisted variable, created By JavaScript
 console.log(myVariable);
 var myVariable; // this line has no effect
 ```
@@ -69,7 +69,13 @@ var myVariable = 'Hello Nerdschool!';
 
 :pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
 
-:exclamation: Why does the code still behave the same? Because the _value_ assignment of the `myVariable` variable will _not_ be hoisted by JavaScript.
+:exclamation: Why does the code still behave the same? Because the _value_ assignment of the `myVariable` variable will _not_ be hoisted by JavaScript. In effect, the code now looks like this:
+
+``JavaScript
+var myVariable; // hoisted variable, created by JavaScript
+console.log(myVariable);
+var myVariable = 'Hello Nerdschool';
+```
 
 Next we are going to look at why this can cause problems when dealing with functions.
 
