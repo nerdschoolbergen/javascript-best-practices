@@ -11,7 +11,9 @@ You will learn about:
 
 ## 1.0 - Variables and hoisting
 
-:book: Let's have a look at how defining and initialising variables work in JavaScript.
+## 1.0.1 - Defining variables
+
+:book: Let's have a look at how defining variables work in JavaScript.
 
 Consider the following code:
 ```JavaScript
@@ -37,7 +39,26 @@ console.log(myVariable);
 
 :book: The code now runs, and outputs `undefined` because the `myVariable` variable has no value.
 
-:pencil2: Now try assigning a value to the variable:
+## 1.0.2 - Hoisting
+
+:pencil2: Let's try moving the `myVariable` definition to the buttom:
+```JavaScript
+console.log(myVariable);
+var myVariable;
+```
+
+:question: Will the code still run?
+
+:pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
+
+:exclamation: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "hoists" or lifts all variable _creations_ to the top of the current scope before running the code, the `myVariable` variable will be created and set to `undefined` at the top:
+```JavaScript
+var myVariable; // hoisted variable
+console.log(myVariable);
+var myVariable; // this line has no effect
+```
+
+:pencil2: Let't try assigning a value to the variable:
 
 ```JavaScript
 console.log(myVariable);
@@ -48,14 +69,7 @@ var myVariable = 'Hello Nerdschool!';
 
 :pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
 
-:exclamation: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "hoists" or lifts all variable _creations_ to the top of the current scope before running the code, the `myVariable` variable will be created and set to `undefined` at the top:
-```JavaScript
-var myVariable;
-console.log(myVariable);
-var myVariable = 10;
-```
-
-:book: The _value_ assignment of the `myVariable` variable will _not_ be hoisted.
+:exclamation: Why does the code still behave the same? Because the _value_ assignment of the `myVariable` variable will _not_ be hoisted by JavaScript.
 
 Next we are going to look at why this can cause problems when dealing with functions.
 
