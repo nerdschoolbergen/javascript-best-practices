@@ -123,4 +123,26 @@ console.log(anotherMessage); // add this line
 
 :book: Because the `anotherMessage` variable is declared _inside_ the `printStuff()` function, we cannot access it from the outside like we are trying to in the last line. JavaScript will therefore throw a `ReferenceError` when trying to access the `anotherMessage` variable in the wrong scope.
 
+### 2.2.0 - Function scope and hoisting
+
+:book: As we saw in the last task, we can access variables created _outside_ a function.
+
+Let's try changing the code a bit by assigning a value to `myMessage` inside the function and logging out the value of `myMessage` in the last line. Remember to remove the second `console.log()` statement inside the function as well:
+```JavaScript
+var myMessage = 'A message';
+
+function printStuff() {
+  myMessage = 'Testing 123'; // changed
+  console.log(myMessage);
+}
+printStuff();
+console.log(myMessage); // changed
+```
+
+:question: What do you think will happen if we run the code now?
+
+:pencil2: Modify the code in `exercise-3.js` and run it in Node.js.
+
+:book: Because we can access variables created _outside_ a function, the `myMessage` variable will now be assigned a new value inside the `printStuff()` function. The output will therefore be "Testing 123" (twice).
+
 ## 3.0 - Global variables and scope
