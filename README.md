@@ -19,9 +19,8 @@ The focus of this workshop is best practices for JavaScript development. Rather 
 * Although you have this `README.md` file on your computer it's easier to read it on GitHub, so we recommend you keep this page open with the exercise tasks.
 
 ## Exercises
-This repository contains a set of exercises organized in folders. Each folder contains a `README.md` describing the exercise.
+This repository contains a set of exercises organized in folders. Each folder contains a `README.md` describing the exercise
 
-### TEMP:
 - [Exercise 1 - Syntax](exercise-1/) (start here)
 - [Exercise 2 - Syntax continued](exercise-2/)
 - [Exercise 3 - Hoisting and scope](exercise-3/)
