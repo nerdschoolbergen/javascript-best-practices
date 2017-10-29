@@ -200,13 +200,91 @@ Foo.prototype.bar = function() {
 
 So you see, it's just functions under the hood. The same rules regarding `this` etc applies here just like anywhere else in the language. What classes gives you, though, is a lot less boilerplate to write, easier code to read and maintain, and managing `this` with `call` is handled for you behind the scenes. There is nothing a class can do that we couldn't do before in the language (including inheritance/`extends`), it just gives us a nicer wrapping around it, which is nice.
 
-## 1.0 - Global scope pollution
+## 2.0 - Global scope pollution
 
-### 1.1.0 - IIFEs
+:book: As we learned about in the previous section, it is good practice to avoid "polluting" the global scope, as you never know what function or variable declared in other scripts (yours or others) you are potentially overwriting. All scripts loaded in the browser the same global scope.
 
-### 1.2.0 - ES Modules
+To work around this issue we can create a new scope that works as a "wrapper" around all the code in our script.
 
-## 2.0 - Advanced use of functions
+### 2.1.0 - IIFEs
 
-### 1.1.0 - First Class Functions explained
-### 1.2.0 - Callbacks
+:book: Before we get into what an "IIFE" is, we need to go over some JavaScript function basics. There are two ways of creating a function in JavaScript:
+- Via function declarations
+- Via Function expressions
+
+Function declarations you know already (the "normal" way):
+```JavaScript
+function myFunc() {
+  // do stuff
+}
+myFunc();
+```
+
+The other way is via Function expressions by using the `function` keyword:
+```JavaScript
+var myFunc = function() {
+  // do stuff
+};
+myFunc();
+```
+
+:book: The last one is a bit weird, because we are assigning the function to a variable. Functions in JavaScript are like any other object, and because of this you can assign them to variables or even properties of objects:
+
+```JavaScript
+var myObj = {
+  myFunc: function() {
+    // do stuff
+  }
+}
+myObj.myFunc();
+```
+
+:book: Expressions in JavaScript are any valid unit of code that resolves to a value.
+
+For example:
+```JavaScript
+3 + 4; // This is an expression even if it is not assigned to a variable
+3 + (4 * 4); // This is an example of using the grouping operator
+console.log((4/3)+2) // The expression resolved to a velue before it is logged
+```
+
+:book: The `function` keyword we used to create functions earlier can be used to define a function _inside_ an expression:
+
+```JavaScript
+(function() {
+  // do stuff
+});
+```
+
+:book: If we want to _execute_ the function, we add a `()` at the end:
+```JavaScript
+(function() {
+    // do stuff
+})();
+```
+
+:book: The function inside the expression will now be invoked as immediately after it is parsed. It's an _Immediately Invoked Function Expression_, or IIFE for short.
+
+:pencil2: Try adding the code above to `exercise-4.js`, add a `console.log()` statement inside the IIFE and run the code.
+
+:book: The `console.log()` statment should have printed something out to the console.
+
+:pencil2: Try modifying the code a bit by declaring a varible inside the IIFE and try to access it outside:
+
+```JavaScript
+(function() {
+    var myPrivateVar = 1;
+})();
+console.log(myPrivateVar);
+```
+
+:pencil2: Try running the code. Observe that the code throws an `ReferenceError` because the `myPrivateVar` is not defined in the global scope outside the IIFE (where it is being accessed).
+
+This is because the IIFE creates a new scope inside it, where you can declare all the variables you want without worrying about polluting the global scope.
+
+### 2.2.0 - ES Modules
+
+## 3.0 - Advanced use of functions
+
+### 3.1.0 - First Class Functions explained
+### 3.2.0 - Callbacks
