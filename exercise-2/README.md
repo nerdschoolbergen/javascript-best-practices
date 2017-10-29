@@ -12,9 +12,11 @@ You will learn about:
 
 :book: We often need to compare values when programming in JavaScript. JavaScript provides two types of value-comparison operations:
 - Loose equality using `==` (also called "double equals")
-- Strict equality using `===` (also called "tripe equals")
+- Strict equality using `===` (also called "triple equals")
 
 These operators both takes one operand on the left and right side and returns a boolean.
+
+## 1.1.1 - Loose equality
 
 Consider the following code:
 ```JavaScript
@@ -47,7 +49,7 @@ Before comparing the two values on each side of the operator, it looks at the da
 - Object (`{a:1}`, `["apples", "pears", "oranges"]` )
 - Symbol (ES6, created via the `Symbol()` function)
 
-:exclamation: If the types are identical, for example a string and a string, the loose equality operator just performs the equality comparison. However, if the types are _not identitcal_, it converts both values to a common type _before_ doing the equality comparison.
+:exclamation: If the types are identical, for example a string and a string, the loose equality operator just performs the equality comparison. However, if the types are _not identical, it converts both values to a common type _before_ doing the equality comparison.
 
 :book: In the code above, we compare a string and a number (`1` and `"1"`). In this case the second operand (`"1"`) is converted to a number (`1`). `1` equals `1`, so the result is `true`.
 
@@ -72,3 +74,21 @@ if(areEqual(a, b)) {
 :question: What do you think the output of this code will be?
 
 :pencil2: Try typing it into the `exercise-2.js` file and run it in using Node.js.
+
+# 1.1.2 - Strict equality
+
+:book: We can perform a strict equality comparison using `===`. The strict equality operator has two conditions. In order to match, operands need to:
+- be of the _same type_
+- have the same value
+
+:pencil2: Modify the `areEqual` function to use `===` unstead of `==`.
+
+:question: What do you think the output of this code will be after replacing the comparison operator?
+
+:pencil2: Try running the code again using Node.js.
+
+:book: Because we are trying to compare a number (`0`) and a boolean (`false`), the strict equality comparison returns `false`.
+
+:exclamation: **Best practice #3:** Always use strict equality instead of loose equality to prevent unintended behaviour
+
+# 1.1.3 - Linting rules for equality
