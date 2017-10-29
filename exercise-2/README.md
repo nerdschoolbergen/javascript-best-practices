@@ -76,18 +76,18 @@ if(areEqual(a, b)) {
 
 :pencil2: Try setting `a` and `b` to the following and see what the output is. Does the result equal what you'd expect?
 
-| `a` | `b` |
+|`a`|`b`|
 |---|---|
-|`''` | `0` |
-|`0`  |`''` |
-|`0`  |`'0'`|
-|`false`   |`'false' ` |
-|`false`   |`'0'`   |
-|false   |undefined   |
-|false   |null   |
-|null   |undefined   |
-|'\t\r\n'   | 0  |
-| []  | null |
+|`''`| `0`|
+|`0`|`''`|
+|`0`|`'0'`|
+|`false`|`'false'`|
+|`false`|`'0'`|
+|`false`|`undefined`|
+|`false`|`null`|
+|`null`|`undefined`|
+|`'\t\r\n'`|`0`|
+|`[]`|`null`|
 
 # 1.1.2 - Strict equality
 
