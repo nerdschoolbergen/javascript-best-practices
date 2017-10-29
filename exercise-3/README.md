@@ -55,6 +55,8 @@ console.log(myVariable);
 var myVariable = 10;
 ```
 
+:book: The _value_ assignment of the `myVariable` variable will _not_ be hoisted.
+
 Next we are going to look at why this can cause problems when dealing with functions.
 
 ## 2.0 - Functions and hoisting
