@@ -2,7 +2,7 @@
 
 You will learn about:
  - Variables and hoisting
- - Functions and hoisting
+ - Function scope and hoisting
  - Global variables and scope
 
 ## Required software and tools for this exercise
@@ -80,6 +80,8 @@ var myVariable = 'Hello Nerdschool';
 Next we are going to look at why this can cause problems when dealing with functions.
 
 ## 2.0 - Functions and hoisting
+
+### 2.1.0 - Function scope
 
 :book: In the last section we looked at how JavaScript hoists variable _creation_ to the top of the scope _where it is defined_.
 
