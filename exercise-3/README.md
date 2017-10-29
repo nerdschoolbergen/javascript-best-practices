@@ -119,6 +119,6 @@ console.log(anotherMessage); // add this line
 
 :pencil2: Modify the code in `exercise-3.js` and run it in Node.js.
 
-:book: Because the `anotherMessage` variable is declared _inside_ the `printStuff()` function, we cannot access it from the outside like we are trying to in the last line.
+:book: Because the `anotherMessage` variable is declared _inside_ the `printStuff()` function, we cannot access it from the outside like we are trying to in the last line. JavaScript will therefore throw a `ReferenceError` when trying to access the `anotherMessage` variable in the wrong scope.
 
 ## 3.0 - Global variables and scope
