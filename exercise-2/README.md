@@ -106,3 +106,33 @@ if(areEqual(a, b)) {
 :exclamation: **Best practice #3:** Always use strict equality instead of loose equality to prevent unintended behaviour
 
 # 1.1.3 - Linting rules for equality
+
+:book: To help you remember to use the correct way of testing for equality, we can set up ESLint to enforce strict mode using the [`eqeqeq`]() rule.
+
+:pencil2: Add the `eqeqeq`-rule to `\exercise-2\.eslintrc.json`. It should look like this:
+
+```json
+{
+    "rules": {
+      "semi": "error",
+      "brace-style": "error",
+      "eqeqeq": "error"
+    }
+}
+```
+
+:exclamation: Remember the trailing commas at the end of the third and fourth line.
+
+:pencil2: Open `exercise-2.js` and add the following code:
+
+```JavaScript
+var x = 1;
+var y = '0';
+var areTheyEqual = x == y;
+```
+
+The linter should alert you that you have an error related to the `eqeqeq` rule in your code on line three.
+
+:pencil2: Try fixing the code to get rid of the error.
+
+### [Go to exercise 3 ==>](../exercise-3/README.md)
