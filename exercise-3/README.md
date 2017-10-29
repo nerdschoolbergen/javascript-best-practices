@@ -319,7 +319,7 @@ console.log(stringToPrint);
 :book: The code now throws an `ReferenceError` when accessing a variable that has not been defined.
 
 
-:important: **Best practice #5:** Use strict mode to avoid hoisting problems
+:exclamation: **Best practice #5:** Use strict mode to avoid hoisting problems
 
 :bulb: There are way to many details about strict mode to cover here, but if you have trouble sleeping one night, you can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 
