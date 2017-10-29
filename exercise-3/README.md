@@ -125,6 +125,8 @@ console.log(anotherMessage); // add this line
 
 ### 2.2.0 - Function scope and hoisting
 
+#### 2.2.0.1 - Modifying variables outside a function from the inside
+
 :book: As we saw in the last task, we can access variables created _outside_ a function.
 
 Let's try changing the code a bit by assigning a value to `myMessage` inside the function and logging out the value of `myMessage` in the last line. Remember to remove the second `console.log()` statement inside the function as well:
@@ -144,5 +146,110 @@ console.log(myMessage); // changed
 :pencil2: Modify the code in `exercise-3.js` and run it in Node.js. (Remember to cross-check that the code is exacly the same)
 
 :book: Because we can access variables created _outside_ a function, the `myMessage` variable will now be assigned a new value inside the `printStuff()` function. The output will therefore be "Testing 123" (twice).
+
+##### 2.2.0.2 - Variable hoisting inside a function
+
+:book: Let's try modifying the code from the last task yet again:
+
+```JavaScript
+var myMessage = 'A message';
+
+function printStuff() {
+  myMessage = 'Testing 123';
+  console.log(myMessage);
+  var myMessage; // added
+}
+printStuff();
+console.log(myMessage);
+```
+
+:question: What do you think the output of the code will be?
+
+:pencil2: Modify the code in `exercise-3.js` and run it in Node.js. (Remember to cross-check that the code is exacly the same)
+
+:book: The code now outputs "Testing 123" and then "A message". Hoisting will move the `var myMessage` declaration inside the function to the top of it's scope. The result will be:
+
+```JavaScript
+var myMessage = 'A message';
+
+function printStuff() {
+  var myMessage; // Created by JavaScript
+  myMessage = 'Testing 123';
+  console.log(myMessage);
+}
+printStuff();
+console.log(myMessage);
+```
+
+:important: We now have two different variable declarations with the same name, each in its own scope. When the `printStuff()` function tries to assign a new value to `myMessage` outside the function, it will instead just set the value of it's own myMessage variable that hoisting created.
+
+:book: In larger functions/code bases it's easy to forget that a variable name has been used before outside a function. If you also end up creating variables close to where you need them in the code (instead of at the top of each scope), it's very easy to fall into the "hoisting trap". This creates potential conflicts and confusion.
+
+:exclamation: **Best practice #4:** Always put variable declarations at the top of the scope where you declare them to avoid accidental hoisting. Assignment can be done at a later time. Never use variables before defining them.
+
+Best practice #4 example:
+```JavaScript
+var a;
+var b;
+
+function myFunc(input) {
+  var x;
+  var y;
+  if(input > 1) {
+    x = input * 2;
+    y = input / 2;
+  } else {
+    x = input * 4;
+    y = input / 4;
+  }
+  return x + y;
+}
+
+a = 1;
+b = myFunc(a);
+console.log(b);
+```
+
+## 2.3.0 - Linting rules to avoid accidental hoisting
+
+:book: To avoid accidental variable hoisting we can configure ESLint to enforce this via these two rules:
+-  [`no-use-before-define`](https://eslint.org/docs/rules/no-use-before-define)
+- [`vars-on-top`](https://eslint.org/docs/rules/vars-on-top)
+
+- The `no-use-before-define` rule will warn when it encounters a reference to a variable that has not yet been declared.
+- The `vars-on-top` rule will warn when it encounters a variable declaration that is not on top of its scope.
+
+:pencil2: Try these rules out by adding them to the `exercise-3\.eslintrc.json` file:
+
+```
+{
+    "rules": {
+      "semi": "error",
+      "brace-style": "error",
+      "eqeqeq": "error",
+      "no-use-before-define": "error",
+      "vars-on-top": "error"
+    }
+}
+```
+
+:pencil2: Remove all code from `exercise-3.js` and add the following:
+
+```JavaScript
+a = 1;
+var a;
+
+myFunc(a);
+
+function myFunc(input) {
+  var x = input;
+  if(input > 0) {
+    var y = input;
+  }
+  return x + y;
+}
+```
+
+:pencil2: Try modifying the code to get rid of all linting errors.
 
 ## 3.0 - Global variables and scope
