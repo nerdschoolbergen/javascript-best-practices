@@ -24,7 +24,7 @@ console.log(myVariable);
 
 :pencil2: Try adding the code to `exercise-3.js` and run it in Node.js.
 
-:book: Why did this happen? Because the `myVariable` variable i undefined, the code throws an `ReferenceError`.
+:book: Because the `myVariable` variable i undefined, the code throws an `ReferenceError`.
 
 :pencil2: Let's try adding a `myVariable` variable definition at the top:
 
