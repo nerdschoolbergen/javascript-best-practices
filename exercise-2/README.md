@@ -2,7 +2,6 @@
 
 You will learn about:
  - Equality
- - Variables
 
 ## Required software and tools for this exercise
 - [Atom](https://atom.io/)
@@ -49,7 +48,7 @@ Before comparing the two values on each side of the operator, it looks at the da
 - Object (`{a:1}`, `["apples", "pears", "oranges"]` )
 - Symbol (ES6, created via the `Symbol()` function)
 
-:exclamation: If the types are identical, for example a string and a string, the loose equality operator just performs the equality comparison. However, if the types are _not identical, it converts both values to a common type _before_ doing the equality comparison.
+:exclamation: If the types are identical, for example a string and a string, the loose equality operator (`==`) just performs the equality comparison. However, if the types are _not identical, it converts both values to a common type _before_ doing the equality comparison.
 
 :book: In the code above, we compare a string and a number (`1` and `"1"`). In this case the second operand (`"1"`) is converted to a number (`1`). `1` equals `1`, so the result is `true`.
 
@@ -74,6 +73,21 @@ if(areEqual(a, b)) {
 :question: What do you think the output of this code will be?
 
 :pencil2: Try typing it into the `exercise-2.js` file and run it in using Node.js.
+
+:pencil2: Try setting `a` and `b` to the following and see what the output is. Does the result equal what you'd expect?
+
+| `a` | `b` |
+|---|---|
+|`''` | `0` |
+|`0`  |`''` |
+|`0`  |`'0'`|
+|`false`   |`'false' ` |
+|`false`   |`'0'`   |
+|false   |undefined   |
+|false   |null   |
+|null   |undefined   |
+|'\t\r\n'   | 0  |
+| []  | null |
 
 # 1.1.2 - Strict equality
 
