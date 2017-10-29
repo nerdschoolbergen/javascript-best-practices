@@ -141,7 +141,7 @@ console.log(myMessage); // changed
 
 :question: What do you think will happen if we run the code now?
 
-:pencil2: Modify the code in `exercise-3.js` and run it in Node.js.
+:pencil2: Modify the code in `exercise-3.js` and run it in Node.js. (Remember to cross-check that the code is exacly the same)
 
 :book: Because we can access variables created _outside_ a function, the `myMessage` variable will now be assigned a new value inside the `printStuff()` function. The output will therefore be "Testing 123" (twice).
 
