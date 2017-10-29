@@ -71,7 +71,7 @@ var myVariable = 'Hello Nerdschool!';
 
 :exclamation: Why does the code still behave the same? Because the _value_ assignment of the `myVariable` variable will _not_ be hoisted by JavaScript. In effect, the code now looks like this:
 
-``JavaScript
+```JavaScript
 var myVariable; // hoisted variable, created by JavaScript
 console.log(myVariable);
 var myVariable = 'Hello Nerdschool';
