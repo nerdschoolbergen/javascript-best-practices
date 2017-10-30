@@ -25,6 +25,7 @@ This repository contains a set of exercises organized in folders. Each folder co
 - [Exercise 2 - Equality](exercise-2/)
 - [Exercise 3 - Hoisting and scope](exercise-3/)
 - [Exercise 4 - Patterns](exercise-4/)
+- [Feedback](feedback/) (when you're done)
 
 ### Symbols and notation used in exercises
 
