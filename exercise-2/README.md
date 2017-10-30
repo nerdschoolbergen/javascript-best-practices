@@ -1,4 +1,4 @@
-# Exercise 2 - Syntax continued
+# Exercise 2 - Equality
 
 You will learn about:
  - Equality
@@ -138,6 +138,17 @@ The linter should alert you that you have an error related to the `eqeqeq` rule 
 
 ## 2.1 - Truthy/falsy values
 
-> :book: From MDN: In JavaScript, a _truthy_ value is a value that is considered  true when evaluated in a Boolean context. All values are truthy unless they are defined as _falsy_ (i.e., except for false, 0, "", null, undefined, and NaN).
+> :book: From MDN: In JavaScript, a _truthy_ value is a value that is considered true when evaluated in a Boolean context. All values are truthy unless they are defined as _falsy_ (i.e., except for `false`, `0`, `""`, `null`, `undefined`, and `NaN`).
+
+Consider the following code:
+```JavaScript
+var x = 1;
+if(x) {
+  console.log('Value exists');
+}
+else {
+  console.log('Value does not exist');
+}
+```
 
 ### [Go to exercise 3 ==>](../exercise-3/README.md)
