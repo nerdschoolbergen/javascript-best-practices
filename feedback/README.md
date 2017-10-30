@@ -4,7 +4,7 @@ Thanks for completing our workshop :tada: !! We put a lot of time into making th
 
 If you have suggestions or requests, found spelling mistakes, missing or lackluster explanations, or poorly designed exercises, we'd love to hear from you.
 
-### [Take a very quick poll](http://www.easypolls.net/poll.html?p=59f77c8ee4b036a938d51ebb)
+### [Take a very quick survey](https://goo.gl/forms/Lx4u2DmfNLrWQwNj2)
 
 ### [Leave feedback on Meetup.com](https://www.meetup.com/preview/Bergen-Nerdschool)
 
