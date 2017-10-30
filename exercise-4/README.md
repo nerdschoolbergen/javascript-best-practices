@@ -318,6 +318,8 @@ consolel.log(helloWorld());
 
 :book: Another feature in ECMASCript 6 is the `let` and `const` keyword for declaring variables.
 
+#### 2.3.1.0 - let
+
 The `let` keyword creates variables scoped to the current _block_, not function scope or global scope.
 
 :pencil2: Try adding the following code to `exercise-4.js`:
@@ -365,3 +367,7 @@ Here is a simpler version:
 :question: Is the IIFE really need now that we can scope variables to blocks instead?
 
 :pencil2: Try simplifying the code by removing the IIFE, and see if it still behaves in the same way (not modifying the global scope).  
+
+#### 2.3.2.0 - const
+
+TBA
