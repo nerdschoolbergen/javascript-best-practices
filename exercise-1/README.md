@@ -188,7 +188,7 @@ console.log('Result:', addTwoNumbers(1,2))
 
 :bulb: The only exception to ASI Rule #3 is `for` statements, ASI never inserts semicolons inside the parenthesis of a `for` statement.
 
-:exclamation: **Best practice #1:** _Use semicolons_. If you insist on not using them, learn the ASI rules well to avoid trouble.
+:exclamation: **Best practice:** _Use semicolons_. If you insist on not using them, learn the ASI rules well to avoid trouble.
 
 :bulb: For reference: [The ECMAScript 5.1 spec - ASI rules](http://www.ecma-international.org/ecma-262/5.1/#sec-7.9)
 
@@ -328,6 +328,6 @@ notify you that the opening curly braces for the functions are misplaced.
 
 :pencil2: Fix the styling error by moving the opening curly braces.
 
-:exclamation: **Best practice #2:** _Use the one true brace style_ for braces in your code.
+:exclamation: **Best practice:** _Use the one true brace style_ for braces in your code.
 
 ### [Go to exercise 2 ==>](../exercise-2/README.md)

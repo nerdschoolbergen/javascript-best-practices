@@ -185,7 +185,7 @@ console.log(myMessage);
 
 :book: In larger functions/code bases it's easy to forget that a variable name has been used before outside a function. If you also end up creating variables close to where you need them in the code (instead of at the top of each scope), it's very easy to fall into the "hoisting trap". This creates potential conflicts and confusion.
 
-:exclamation: **Best practice #4:** Always put variable declarations at the top of the scope where you declare them to avoid accidental hoisting. Assignment can be done at a later time. Never use variables before defining them.
+:exclamation: **Best practice:** Always put variable declarations at the top of the scope where you declare them to avoid accidental hoisting. Assignment can be done at a later time. Never use variables before defining them.
 
 Best practice #4 example:
 ```JavaScript
@@ -331,7 +331,7 @@ console.log(stringToPrint);
 :book: The code now throws an `ReferenceError` when accessing a variable that has not been defined.
 
 
-:exclamation: **Best practice #5:** Use strict mode to avoid hoisting problems
+:exclamation: **Best practice:** Use strict mode to avoid hoisting problems
 
 :bulb: There are way to many details about strict mode to cover here, but if you have trouble sleeping one night, you can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 

@@ -370,5 +370,5 @@ Here is a simpler version:
 
 :book: As we mentioned about in exercise 3, the `const` keyword let's you define variables that cannot be _reassigned_. It also behaves the same as `let` when it comes to scoping.
 
-**Best practice for ES6 encapsulation:**
+**Best practice:**
 - If you are using ES6 (or newer) and you are not using modules, use `let` and `const` for encapsulation instead of IIFEs.  

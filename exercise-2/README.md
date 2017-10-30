@@ -104,7 +104,7 @@ if(areEqual(a, b)) {
 
 :book: Because we are trying to compare a number (`0`) and a boolean (`false`), the strict equality comparison returns `false`.
 
-:exclamation: **Best practice #3:** Always use strict equality instead of loose equality to prevent unintended behaviour
+:exclamation: **Best practice:** Always use strict equality instead of loose equality to prevent unintended behaviour
 
 ## 1.1.3 - Linting rules for equality
 
@@ -169,7 +169,7 @@ else {
 
 :bulb: the `if(x)` boolean test is behind the scenes actually doing a loose equality comparison: `ìf(x == true)`.
 
-:exclamation: **Best practice #4:** Use explicit null-or-undefined checks if you're checking if a variable has any value at all. Use `if (x) { ... }` truthy/falsy check if you know this is the behavior you need.
+:exclamation: **Best practice:** Use explicit null-or-undefined checks if you're checking if a variable has any value at all. Use `if (x) { ... }` truthy/falsy check if you know this is the behavior you need.
 
 
 
