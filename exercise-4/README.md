@@ -289,8 +289,11 @@ This is because the IIFE creates a new scope inside it, where you can declare al
 
 :book: ECMAScript 6 has a feature called modules, which helps you structure code in an efficient way. 
 
-- A module is a JavaScript file that that exposes one or more functions via the `export` keyword
-- A module can import other modules via the `import` keyword in order to call other modules
+A module...
+- ...is a JavaScript file that that exposes one or more functions via the `export` keyword
+- ...can import other modules via the `import` keyword in order to call other modules
+- ...has strict mode enabled by default
+- ...creates a new function scope automatically 
 
 An example:
 
