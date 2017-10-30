@@ -283,17 +283,17 @@ This is because the IIFE creates a new scope inside it, where you can declare al
 
 :exclamation: **Best practice:** Use IIFEs around your code to prevent polluting the global scope.
 
-### 2.2.0 - ES Modules
+### 2.2.0 - ECMAScript 6 modules
 
 > :bulb: This feature is only just beginning to be implemented in browsers natively at this time. It is implemented in many transpilers, such as TypeScript and Babel, and bundlers such as Rollup) and Webpack.
 
-:book: ECMAScript 6 has a feature called modules, which helps you structure code in an efficient way. 
+:book: ECMAScript 6 has a feature called modules, which helps you structure code in an efficient way.
 
 A module...
 - ...is a JavaScript file that that exposes one or more functions via the `export` keyword
 - ...can import other modules via the `import` keyword in order to call other modules
 - ...has strict mode enabled by default
-- ...creates a new function scope automatically 
+- ...creates a new function scope automatically
 
 An example:
 
@@ -310,4 +310,20 @@ Importing the module:
 // Main.js
 import helloWorld from './HelloWorld.js';
 consolel.log(helloWorld());
+```
+
+### 2.3.0 - ECMAScript 6 block scope with let/const
+
+:book: Another feature in ECMASCript 6 is the `let` and `const` keyword for declaring variables.
+
+The `let` keyword creates variables scoped to the current _block_, not function scope or global scope.
+
+:pencil2: Try adding the following code to `exercise-4.js`:
+```JavaScript
+(function() {
+  if(true) {
+    let x = 1;
+  }
+  console.log(x);
+})();
 ```
