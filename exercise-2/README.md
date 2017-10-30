@@ -138,17 +138,35 @@ The linter should alert you that you have an error related to the `eqeqeq` rule 
 
 ## 2.1 - Truthy/falsy values
 
-> :book: From MDN: In JavaScript, a _truthy_ value is a value that is considered true when evaluated in a Boolean context. All values are truthy unless they are defined as _falsy_ (i.e., except for `false`, `0`, `""`, `null`, `undefined`, and `NaN`).
+> :book: From MDN: In JavaScript, a _truthy_ value is a value that is considered true when evaluated in a Boolean context. All values are truthy unless they are defined as _falsy_.
+
+In other words, truthy values are true-_ish_ and falsy values are false-_ish_. This is one of the major gotchas in JavaScript.
 
 Consider the following code:
 ```JavaScript
-var x = 1;
-if(x) {
-  console.log('Value exists');
+var x = false;
+if (x) {
+  console.log('Value is truthy');
 }
 else {
-  console.log('Value does not exist');
+  console.log('Value is falsy');
 }
 ```
+
+:pencil2: Run the code above.  
+:pencil2: Set x to be the following values:  
+
+| x           |
+|-------------|
+|false        |
+|0            |
+|""           |
+|null         |
+|undefined    |
+|NaN          |
+
+:question: Was the result as you expected? Take extra note of how `0` and `""` is treated - these are often the source of equality checks gone bad.
+
+:exclamation: **Best practice #4:** Use explicit null-or-undefined checks if you're checking if a variable has any value at all. Use `if (x) { ... }` truthy/falsy check if you know this is the behavior you need.
 
 ### [Go to exercise 3 ==>](../exercise-3/README.md)
