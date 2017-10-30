@@ -340,3 +340,5 @@ We can force the use of Strict mode in ESLint by adding the [`strict`](https://e
 ```
 
 :pencil2: Try removing the `use strict;` directive from  `exercise-3.js` and see what happens.
+
+### [Go to exercise 4 ==>](../exercise-4/README.md)
