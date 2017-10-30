@@ -232,7 +232,9 @@ function greet() {
 }
 ```
 
-Playing with lambdas require a more complex set-up/build chain than our workshop is aimed for so no try-lambdas-yourself in this workshop, unfortunately.
+(Playing with lambdas require a more complex set-up/build chain than our workshop is aimed for so no try-lambdas-yourself in this workshop, unfortunately.)
+
+In many ways, this makes lambdas easier to reason about and "more lightweight". In modern code bases we typically prefer lambdas wherever we can, since `this` is rarely used outside of classes. If you however need the "full functionality" of a function, then use a good old `function`.
 
 ## 2.0 - Global scope pollution
 
