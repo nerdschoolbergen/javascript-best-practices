@@ -4,7 +4,6 @@ You will learn about:
  - Variables and hoisting
  - Function scope and hoisting
  - Strict mode
- - Global variables and scope
 
 ## Required software and tools for this exercise
 - [Atom](https://atom.io/)
@@ -323,7 +322,7 @@ console.log(stringToPrint);
 
 :bulb: There are way to many details about strict mode to cover here, but if you have trouble sleeping one night, you can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 
-# 3.2.0 - Linting rules for strict mode
+## 3.2.0 - Linting rules for strict mode
 
 We can force the use of Strict mode in ESLint by adding the [`strict`](https://eslint.org/docs/rules/strict) rule to `exercise-3\.eslintrc.json`:
 
@@ -341,5 +340,3 @@ We can force the use of Strict mode in ESLint by adding the [`strict`](https://e
 ```
 
 :pencil2: Try removing the `use strict;` directive from  `exercise-3.js` and see what happens.
-
-## 4.0 - Global variables and scope
