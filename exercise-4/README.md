@@ -85,7 +85,7 @@ In strict mode, the value of `this` inside a function is whatever it was set to 
 
 So to make `this` not be undefined, we must take a look at the built-in prototype functions `call` and `apply`. For simplicity, let's just use the `call` function today.
 
-All functions in JavaScript inherits certain other functions (such as `call`, `apply`, and `bind`) from the `Function.prototype` function in the language. This might seem confusing, but for now just try to acknowledge that functions can have functions in JavaScript, because a function is just an object. Yes, it's [weird](http://gph.is/191zeP3).
+All functions in JavaScript inherits certain other functions from the `Function.prototype` function in the language. This might seem confusing, but for now just try to acknowledge that functions can have functions in JavaScript. Yes, it's weird.
 
 So if we look at the [call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) function, the first argument will be the function's `this` context, and the other parameters will be the function's arguments.
 
@@ -409,4 +409,6 @@ const PERSON = {
 
 :pencil2: Try altering the `firstname` property of the object after it is declared.
 
-:book: Why did this still work? Because `const` will not throw an error if object properties are mutated. If you need to make an object immutable, use [`Object.freeze`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
+:book: Why did this still work? Because `const` will not throw an error if object properties are mutated. If you need to make an object immutable, use [`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
+
+**Best practice for ES6 variable use:**: Use `const` by default. Use `let` if you have to reassign a variable. `let` is the new `var`, except in cases where you really want a variable to be in the function scope.
