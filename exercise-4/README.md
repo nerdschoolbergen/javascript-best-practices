@@ -192,7 +192,7 @@ This method allows `sayHello` to use `this` as before, but we are now depending 
 
 ## 1.4.0 Classes
 
-We're not going to dive deep into JavaScript classes here, but we want to just touch on the basics so you can see they're really nothing special.
+We're not going to dive deep into JavaScript classes here, but we want to just touch on the basics so you can see they're really nothing special, and that scoping (and `this`) for a class is just like what we have already discussed above.
 
 A `class` in JavaScript is just syntax sugar for functions.
 
@@ -217,7 +217,7 @@ Foo.prototype.bar = function() {
 }
 ```
 
-So you see, it's just functions under the hood. The same rules regarding `this` etc applies here just like anywhere else in the language. What classes gives you, though, is a lot less boilerplate to write, easier code to read and maintain, and managing `this` with `call` is handled for you behind the scenes. There is nothing a class can do that we couldn't do before in the language (including inheritance/`extends`), it just gives us a nicer wrapping around it, which is nice.
+So you see, it's just functions under the hood. A class containing functions is just compiled into an outer function wrapping other inner functions. The same rules regarding `this` etc applies here just like anywhere else in the language. What classes gives you, though, is a lot less boilerplate to write, easier code to read and maintain, and managing `this` with `call` is handled for you behind the scenes. There is nothing a class can do that we couldn't do before in the language (including inheritance/`extends`), it just gives us a nicer wrapping around it, which is nice, and very much welcomed.
 
 ## 2.0 - Global scope pollution
 
