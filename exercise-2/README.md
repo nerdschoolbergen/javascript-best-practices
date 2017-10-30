@@ -167,7 +167,7 @@ else {
 
 :question: Was the result as you expected? Take extra note of how `0` and `""` is treated - these are often the source of equality checks gone bad.
 
-:bulb: the `if(x)` boolean test is behind the scenes actually doing a loose equality comparison: `ìf(x == false)`.
+:bulb: the `if(x)` boolean test is behind the scenes actually doing a loose equality comparison: `ìf(x == true)`.
 
 :exclamation: **Best practice #4:** Use explicit null-or-undefined checks if you're checking if a variable has any value at all. Use `if (x) { ... }` truthy/falsy check if you know this is the behavior you need.
 
