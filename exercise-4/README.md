@@ -312,9 +312,13 @@ import helloWorld from './HelloWorld.js';
 consolel.log(helloWorld());
 ```
 
+:exclamation: Node.js does not currently support this syntax yet. Starting with Node.js version 8.5.0 support is available behind an [experimental flag](http://2ality.com/2017/09/native-esm-node.html). ES modules will available by default in Node.js 10.
+
 ### 2.3.0 - ECMAScript 6 block scope with let/const
 
 :book: Another feature in ECMASCript 6 is the `let` and `const` keyword for declaring variables.
+
+#### 2.3.1.0 - let
 
 The `let` keyword creates variables scoped to the current _block_, not function scope or global scope.
 
@@ -327,3 +331,43 @@ The `let` keyword creates variables scoped to the current _block_, not function 
   console.log(x);
 })();
 ```
+
+ESLint will complain about the `let` keyword. This is because we need to configure ES6 support in `.eslintrc.json`.
+
+:pencil2: Insert the `"parserOptions"` key at the top of `excercise-4\.eslintrc.json`:
+```json
+{
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "semi": "error",
+    "brace-style": "error",
+    "eqeqeq": "error",
+    "vars-on-top": "error",
+    "strict": ["error", "global"]
+  }
+}
+```
+
+:pencil2: Try running the code.
+
+:book: The code throws an `ReferenceError` because we defined the `x` variable the block scope of an `if` statement.
+
+Here is a simpler version:
+```JavaScript
+(function() {
+  {
+    let x = 1;
+  }
+  console.log(x);
+})();
+```
+
+:question: Is the IIFE really need now that we can scope variables to blocks instead?
+
+:pencil2: Try simplifying the code by removing the IIFE, and see if it still behaves in the same way (not modifying the global scope).  
+
+#### 2.3.2.0 - const
+
+TBA
