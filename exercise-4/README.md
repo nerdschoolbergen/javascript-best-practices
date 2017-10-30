@@ -199,6 +199,41 @@ Foo.prototype.bar = function() {
 
 So you see, it's just functions under the hood. A class containing functions is just compiled into an outer function wrapping other inner functions. The same rules regarding `this` etc applies here just like anywhere else in the language. What classes gives you, though, is a lot less boilerplate to write, easier code to read and maintain, and managing `this` with `call` is handled for you behind the scenes. There is nothing a class can do that we couldn't do before in the language (including inheritance/`extends`), it just gives us a nicer wrapping around it, which is nice, and very much welcomed.
 
+## 1.5.0 Lambdas
+
+The newer versions of the language introduced _lambdas_ or _arrow functions_, which you might recognize from many other languages.
+
+```js
+// Single-line lambda function that takes no arguments and returns 'hello'
+var greet = () => 'hello';
+
+// Single-line lambda function that takes to arguments and returns a string
+var greet = (greeting, name) => greeting + ' ' + name;
+
+// Multi-line lambda that takes no arguments, returns a new function that takes a 'name' argument, that returns a string
+var greet = () => {
+  var message = 'hallaien';
+  return (name) => message + ' ' + name;
+};
+```
+
+In most cases you can just think _function_ whenever you hear _lambda_.
+
+Where regular functions and lambdas/arrow functions differ, though, is how they handle `this`.
+
+As mentioned several times now, a _function_ is the natural scope/encapsulation/closure for `this` in JavaScript, and we looked at how inner functions define their own `this` which is not the same as the enclosing/outer function's `this` context.
+
+Well, lambdas _do not have their own `this` scope_. Instead, they inherit the parent's `this` context.
+
+```js
+function greet() {
+  this.hi = 'hallaien';
+  return (name) => this.hi + ' ' + name; // Using this.hi inside the lambda function works fine
+}
+```
+
+Playing with lambdas require a more complex set-up/build chain than our workshop is aimed for so no try-lambdas-yourself in this workshop, unfortunately.
+
 ## 2.0 - Global scope pollution
 
 :book: As we learned about in the previous section, it is good practice to avoid "polluting" the global scope, as you never know what function or variable declared in other scripts (yours or others) you are potentially overwriting. All scripts loaded in the browser the same global scope.
