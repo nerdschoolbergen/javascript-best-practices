@@ -252,15 +252,18 @@ function myFunc(input) {
 
 :pencil2: Try modifying the code to get rid of all linting errors.
 
-## 2.4.0 - `let` and `const`
+## 2.4.0 - `let` and `const` and hoisting
 
-The newest version of JavaScript has a few new keywords for variable declaration: `let` and `const`.
+ECMAScript 6 has a few new keywords for variable declaration: `let` and `const`.
 
-`let` is simply just like `var` except there's no hoisting at all.
+`let` variables is simply just like `var` except there's _no hoisting at all_ and the scope is at block level (new in ES6). More on this in exercise 4.
 
-`const` is pretty much exactly what you think: define a variable as a constant, and therefore unchangeable. Since JavaScript can be a pretty volatile language that allows most values to be overwritten at any time, `const` has been warmly welcomed by the community and the rule in many modern code bases is to always use `const` for everything (also function declarations), unless you explicitly need to mutate (change) a value after it has been defined. Typically we prefer to create a new variable (using `const`) instead of mutating the existing one.
+`const` is pretty much exactly what you think: define a variable as a constant, and therefore unchangeable. Since JavaScript can be a pretty volatile language that allows most values to be overwritten at any time, `const` has been warmly welcomed by the community and the rule in many modern code bases is to always use `const` for everything (also function declarations using function expressions), unless you explicitly need to mutate (change) a value after it has been defined. Typically we prefer to create a new variable (using `const`) instead of mutating the existing one.
 
-:exclamation: **Best practice #5:** In newer, modern codebases, always use `const`. If you need to change a variable's value after it has been set, it's best if you can just create a new variable, but if not, use `let`. If your code base is mature (some years old), or does not use transpiling or build systems, you probably need to stick with `var`.
+**Best practice for ES6 variable use:*
+- Use `const` by default.
+- Use `let` if you have to reassign a variable.
+- `let` is the new `var`, except in cases where you really want a variable to be in the function scope.
 
 ## 3.0 - Strict mode
 

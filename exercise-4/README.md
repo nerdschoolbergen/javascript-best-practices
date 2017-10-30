@@ -320,7 +320,7 @@ consolel.log(helloWorld());
 
 #### 2.3.1.0 - let
 
-The `let` keyword creates variables scoped to the current _block_, not function scope or global scope.
+As mentioned in exercise 3, the `let` keyword creates variables scoped to the current _block_, not function scope or global scope.
 
 :pencil2: Try adding the following code to `exercise-4.js`:
 ```JavaScript
@@ -368,30 +368,7 @@ Here is a simpler version:
 
 :pencil2: Try simplifying the code by removing the IIFE, and see if it still behaves in the same way (not modifying the global scope).
 
-#### 2.3.2.0 - const
+:book: As we mentioned about in exercise 3, the `const` keyword let's you define variables that cannot be _reassigned_. It also behaves the same as `let` when it comes to scoping.
 
-The `const` keyword let's you define variables that cannot be _reassigned_.
-
-Consider the following code:
-```JavaScript
-const PI = 3.141592;
-```
-
-:pencil2: Try reassigning the value of the `PI` const variable and see what happens.
-
-Let's look at another example:
-```JavaScript
-const PERSON = {
-  firstname: 'Mad',
-  lastname: 'Max',
-};
-```
-
-:pencil2: Try altering the `firstname` property of the object after it is declared.
-
-:book: Why did this still work? Because `const` will not throw an error if object properties are mutated. If you need to make an object immutable, use [`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
-
-**Best practice for ES6 variable use:*
-- Use `const` by default.
-- Use `let` if you have to reassign a variable.
-- `let` is the new `var`, except in cases where you really want a variable to be in the function scope.
+**Best practice for ES6 encapsulation:**
+- If you are using ES6 (or newer) and you are not using modules, use `let` and `const` for encapsulation instead of IIFEs.  
