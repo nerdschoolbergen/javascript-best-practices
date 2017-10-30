@@ -3,7 +3,6 @@
 You will learn about:
  - Lexical scope and this
  - How to avoid polluting the global scope
- - Advanced use of functions
 
 ## Required software and tools for this exercise
 - [Atom](https://atom.io/)
@@ -286,7 +285,26 @@ This is because the IIFE creates a new scope inside it, where you can declare al
 
 ### 2.2.0 - ES Modules
 
-## 3.0 - Advanced use of functions
+> :bulb: This feature is only just beginning to be implemented in browsers natively at this time. It is implemented in many transpilers, such as TypeScript and Babel, and bundlers such as Rollup) and Webpack.
 
-### 3.1.0 - First Class Functions explained
-### 3.2.0 - Callbacks
+:book: ECMAScript 6 has a feature called modules, which helps you structure code in an efficient way. 
+
+- A module is a JavaScript file that that exposes one or more functions via the `export` keyword
+- A module can import other modules via the `import` keyword in order to call other modules
+
+An example:
+
+```JavaScript
+// HelloWorld.js
+var helloWorld = function() {
+ return "Hello World!";
+}
+export default HelloWorld;
+```
+
+Importing the module:
+```JavaScript
+// Main.js
+import helloWorld from './HelloWorld.js';
+consolel.log(helloWorld());
+```
