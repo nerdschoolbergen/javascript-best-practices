@@ -262,7 +262,7 @@ console.log((4/3)+2) // The expression resolved to a velue before it is logged
 })();
 ```
 
-:book: The function inside the expression will now be invoked as immediately after it is parsed. It's an _Immediately Invoked Function Expression_, or IIFE for short.
+:book: The function inside the expression will now be invoked immediately after it is parsed. It's an _Immediately Invoked Function Expression_, or IIFE for short.
 
 :pencil2: Try adding the code above to `exercise-4.js`, add a `console.log()` statement inside the IIFE and run the code.
 
