@@ -85,7 +85,7 @@ In strict mode, the value of `this` inside a function is whatever it was set to 
 
 So to make `this` not be undefined, we must take a look at the built-in prototype functions `call` and `apply`. For simplicity, let's just use the `call` function today.
 
-All functions in JavaScript inherits certain other functions (such as `call`, `apply`, and `bind`) from the `Function.prototype` function in the language. This might seem confusing, but for now just try to acknowledge that functions can have functions in JavaScript, because a function is just an object. Yes, it's [weird](http://gph.is/191zeP3).
+All functions in JavaScript inherits certain other functions from the `Function.prototype` function in the language. This might seem confusing, but for now just try to acknowledge that functions can have functions in JavaScript. Yes, it's weird.
 
 So if we look at the [call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) function, the first argument will be the function's `this` context, and the other parameters will be the function's arguments.
 
@@ -126,7 +126,7 @@ greet('eirik');
 
 An often occurring problem is accessing `this` which lives outside the current function.
 
-:pencil2: Write the following code and run it:  
+Consider the following code:
 
 ```js
 function greet(name) {
@@ -139,9 +139,9 @@ function greet(name) {
 greet.call({ hi: 'hi' }, 'eirik');
 ```
 
-Your output should be `undefined eirik undefined`. What gives?
+Executing this code returns `undefined eirik undefined`. What gives?
 
-Well, as mentioned earlier, in JavaScript, functions is the lexical scope to which `this` is bound (in strict mode). In other words, the `greet` function has a different `this` context than the `sayHello` function. So when we try to access `this` inside the `sayHello` function, the `hi` and `smiley` values are not set, because they exists on the outer `this` and not sayHello's `this`. A common workaround for this is to assign `this` to another variable:
+Well, as mentioned earlier, in JavaScript, functions is the lexical scope to which `this` is bound. In other words, the `greet` function has a different `this` context than the `sayHello` function. So when we try to access `this` inside the `sayHello` function, the `hi` and `smiley` values are not set, because they exists on the outer `this`. A common workaround for this is to assign `this` to another variable:
 
 ```js
 function greet(name) {
@@ -157,31 +157,11 @@ function greet(name) {
 greet.call({ hi: 'hi' }, 'eirik');
 ```
 
-:pencil2: Change your code to assign `this` to a variable and run it.  
-
-This should correctly print `hi eirik =D`. Note that we changed `sayHello` to use `that.hi` and `that.smiley` instead of `this`. Other common variables instead of `that` are `self` and `me`.
+This correctly prints `hi eirik =D`. Note that we changed `sayHello` to use `that.hi` and `that.smiley` instead of `this`. Other common words are `self` and `me`.
 
 This workaround is very common and an accepted solution by the community. We do however want to always use the same "alias" throughout the codebase, and ESLint can help us enfore this with its `consistent-this` rule.
 
 :pencil2: Open `.eslintrc.json` and add `"consistent-this": ["error", "that"]` to the rules. Feel free to use another alias if you want.  
-
-Another workaround of the problem is to explicitly set the inner function's `this` to be the same as the outer function's `this`:
-
-```js
-function greet(name) {
-  this.smiley = '=D';
-
-  function sayHello() {
-    console.log(this.hi + ' ' + name + ' ' + this.smiley);
-  }
-  sayHello.call(this); // invoke sayHello by passing in greet's "this" context
-}
-greet.call({ hi: 'hi' }, 'eirik');
-```
-
-This method allows `sayHello` to use `this` as before, but we are now depending that greet's `this` context is set-up correctly to fit sayHello's needs. This may also be a perfectly suitable workaround for certain use cases, but it's a lot harder to debug if you don't know how it works (and how `call` works).
-
-:pencil2: Change your code to set the inner function's `this` using `call`, or `bind`.  
 
 ## 1.3.0 Best practices summary for `this`
 
@@ -409,4 +389,9 @@ const PERSON = {
 
 :pencil2: Try altering the `firstname` property of the object after it is declared.
 
-:book: Why did this still work? Because `const` will not throw an error if object properties are mutated. If you need to make an object immutable, use [`Object.freeze`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
+:book: Why did this still work? Because `const` will not throw an error if object properties are mutated. If you need to make an object immutable, use [`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
+
+**Best practice for ES6 variable use:*
+- Use `const` by default.
+- Use `let` if you have to reassign a variable.
+- `let` is the new `var`, except in cases where you really want a variable to be in the function scope.
