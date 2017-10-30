@@ -22,7 +22,7 @@ The focus of this workshop is best practices for JavaScript development. Rather 
 This repository contains a set of exercises organized in folders. Each folder contains a `README.md` describing the exercise
 
 - [Exercise 1 - Syntax](exercise-1/) (start here)
-- [Exercise 2 - Syntax continued](exercise-2/)
+- [Exercise 2 - Equality](exercise-2/)
 - [Exercise 3 - Hoisting and scope](exercise-3/)
 - [Exercise 4 - Patterns](exercise-4/)
 
