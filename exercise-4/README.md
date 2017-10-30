@@ -366,8 +366,27 @@ Here is a simpler version:
 
 :question: Is the IIFE really need now that we can scope variables to blocks instead?
 
-:pencil2: Try simplifying the code by removing the IIFE, and see if it still behaves in the same way (not modifying the global scope).  
+:pencil2: Try simplifying the code by removing the IIFE, and see if it still behaves in the same way (not modifying the global scope).
 
 #### 2.3.2.0 - const
 
-TBA
+The `const` keyword let's you define variables that cannot be _reassigned_.
+
+Consider the following code:
+```JavaScript
+const PI = 3.141592;
+```
+
+:pencil2: Try reassigning the value of the `PI` const variable and see what happens.
+
+Let's look at another example:
+```JavaScript
+const PERSON = {
+  firstname: 'Mad',
+  lastname: 'Max',
+};
+```
+
+:pencil2: Try altering the `firstname` property of the object after it is declared.
+
+:book: Why did this still work? Because `const` will not throw an error if object properties are mutated. If you need to make an object immutable, use [`Object.freeze`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
