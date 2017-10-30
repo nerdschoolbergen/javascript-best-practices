@@ -2,6 +2,7 @@
 
 You will learn about:
  - Equality
+ - Truthy/falsy values
 
 ## Required software and tools for this exercise
 - [Atom](https://atom.io/)
@@ -105,7 +106,7 @@ if(areEqual(a, b)) {
 
 :exclamation: **Best practice #3:** Always use strict equality instead of loose equality to prevent unintended behaviour
 
-# 1.1.3 - Linting rules for equality
+## 1.1.3 - Linting rules for equality
 
 :book: To help you remember to use the correct way of testing for equality, we can set up ESLint to enforce strict mode using the [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq) rule.
 
@@ -134,5 +135,9 @@ var areTheyEqual = x == y;
 The linter should alert you that you have an error related to the `eqeqeq` rule in your code on line three.
 
 :pencil2: Try fixing the code to get rid of the error.
+
+## 2.1 - Truthy/falsy values
+
+TBA
 
 ### [Go to exercise 3 ==>](../exercise-3/README.md)
