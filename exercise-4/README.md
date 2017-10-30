@@ -1,4 +1,4 @@
-# Exercise 3 - Patterns
+# Exercise 4 - Patterns
 
 You will learn about:
  - Lexical scope and this
