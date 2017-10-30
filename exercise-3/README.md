@@ -51,7 +51,7 @@ var myVariable;
 
 :pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
 
-:exclamation: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "hoists" or lifts all variable _creations_ to the top of the current scope before running the code, the `myVariable` variable will be created and set to `undefined` at the top:
+:exclamation: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "**hoists**" or lifts all variable _creations_ to the top of the current scope before running the code. The `myVariable` variable will be created at the top of the current scope, and set to `undefined`. This is called _variable hoisting_ or just _hoisting_.
 ```JavaScript
 var myVariable; // hoisted variable, created By JavaScript
 console.log(myVariable);
@@ -181,7 +181,7 @@ printStuff();
 console.log(myMessage);
 ```
 
-:important: We now have two different variable declarations with the same name, each in its own scope. When the `printStuff()` function tries to assign a new value to `myMessage` outside the function, it will instead just set the value of it's own myMessage variable that hoisting created.
+:exclamation: We now have two different variable declarations with the same name, each in its own scope. When the `printStuff()` function tries to assign a new value to `myMessage` outside the function, it will instead just set the value of its own `myMessage` variable that hoisting created.
 
 :book: In larger functions/code bases it's easy to forget that a variable name has been used before outside a function. If you also end up creating variables close to where you need them in the code (instead of at the top of each scope), it's very easy to fall into the "hoisting trap". This creates potential conflicts and confusion.
 
@@ -251,6 +251,16 @@ function myFunc(input) {
 ```
 
 :pencil2: Try modifying the code to get rid of all linting errors.
+
+## 2.4.0 - `let` and `const`
+
+The newest version of JavaScript has a few new keywords for variable declaration: `let` and `const`.
+
+`let` is simply just like `var` except there's no hoisting at all.
+
+`const` is pretty much exactly what you think: define a variable as a constant, and therefore unchangeable. Since JavaScript can be a pretty volatile language that allows most values to be overwritten at any time, `const` has been warmly welcomed by the community and the rule in many modern code bases is to always use `const` for everything, unless you explicitly need to mutate (change) a value after it has been defined. Typically we prefer to create a new variable (using `const`) instead of mutating the existing one.
+
+:exclamation: **Best practice #5:** In newer, modern codebases, always use `const`. If you need to change a variable's value after it has been set, it's best if you can just create a new variable, but if not, use `let`. If your code base is mature (some years old), or does not use transpiling or build systems, you probably need to stick with `var`.
 
 ## 3.0 - Strict mode
 
