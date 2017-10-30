@@ -252,7 +252,7 @@ function myFunc(input) {
 
 :pencil2: Try modifying the code to get rid of all linting errors.
 
-## 2.4.0 - `let` and `const` and hoisting
+## 2.4.0 - `let` and `const`
 
 ECMAScript 6 has a few new keywords for variable declaration: `let` and `const`.
 
@@ -260,7 +260,7 @@ ECMAScript 6 has a few new keywords for variable declaration: `let` and `const`.
 
 `const` is pretty much exactly what you think: define a variable as a constant, and therefore unchangeable. Since JavaScript can be a pretty volatile language that allows most values to be overwritten at any time, `const` has been warmly welcomed by the community and the rule in many modern code bases is to always use `const` for everything (also function declarations using function expressions), unless you explicitly need to mutate (change) a value after it has been defined. Typically we prefer to create a new variable (using `const`) instead of mutating the existing one.
 
-**Best practice for ES6 variable use:*
+**Best practice for ES6 variable use:**
 - Use `const` by default.
 - Use `let` if you have to reassign a variable.
 - `let` is the new `var`, except in cases where you really want a variable to be in the function scope.
