@@ -391,4 +391,7 @@ const PERSON = {
 
 :book: Why did this still work? Because `const` will not throw an error if object properties are mutated. If you need to make an object immutable, use [`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze).
 
-**Best practice for ES6 variable use:** Use `const` by default. Use `let` if you have to reassign a variable. `let` is the new `var`, except in cases where you really want a variable to be in the function scope.
+**Best practice for ES6 variable use:*
+- Use `const` by default.
+- Use `let` if you have to reassign a variable.
+- `let` is the new `var`, except in cases where you really want a variable to be in the function scope.
