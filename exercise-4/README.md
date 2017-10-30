@@ -126,7 +126,7 @@ greet('eirik');
 
 An often occurring problem is accessing `this` which lives outside the current function.
 
-Consider the following code:
+:pencil2: Write the following code and run it:  
 
 ```js
 function greet(name) {
@@ -139,9 +139,9 @@ function greet(name) {
 greet.call({ hi: 'hi' }, 'eirik');
 ```
 
-Executing this code returns `undefined eirik undefined`. What gives?
+Your output should be `undefined eirik undefined`. What gives?
 
-Well, as mentioned earlier, in JavaScript, functions is the lexical scope to which `this` is bound. In other words, the `greet` function has a different `this` context than the `sayHello` function. So when we try to access `this` inside the `sayHello` function, the `hi` and `smiley` values are not set, because they exists on the outer `this`. A common workaround for this is to assign `this` to another variable:
+Well, as mentioned earlier, in JavaScript, functions is the lexical scope to which `this` is bound (in strict mode). In other words, the `greet` function has a different `this` context than the `sayHello` function. So when we try to access `this` inside the `sayHello` function, the `hi` and `smiley` values are not set, because they exists on the outer `this` and not sayHello's `this`. A common workaround for this is to assign `this` to another variable:
 
 ```js
 function greet(name) {
@@ -157,11 +157,31 @@ function greet(name) {
 greet.call({ hi: 'hi' }, 'eirik');
 ```
 
-This correctly prints `hi eirik =D`. Note that we changed `sayHello` to use `that.hi` and `that.smiley` instead of `this`. Other common words are `self` and `me`.
+:pencil2: Change your code to assign `this` to a variable and run it.  
+
+This should correctly print `hi eirik =D`. Note that we changed `sayHello` to use `that.hi` and `that.smiley` instead of `this`. Other common variables instead of `that` are `self` and `me`.
 
 This workaround is very common and an accepted solution by the community. We do however want to always use the same "alias" throughout the codebase, and ESLint can help us enfore this with its `consistent-this` rule.
 
 :pencil2: Open `.eslintrc.json` and add `"consistent-this": ["error", "that"]` to the rules. Feel free to use another alias if you want.  
+
+Another workaround of the problem is to explicitly set the inner function's `this` to be the same as the outer function's `this`:
+
+```js
+function greet(name) {
+  this.smiley = '=D';
+
+  function sayHello() {
+    console.log(this.hi + ' ' + name + ' ' + this.smiley);
+  }
+  sayHello.call(this); // invoke sayHello by passing in greet's "this" context
+}
+greet.call({ hi: 'hi' }, 'eirik');
+```
+
+This method allows `sayHello` to use `this` as before, but we are now depending that greet's `this` context is set-up correctly to fit sayHello's needs. This may also be a perfectly suitable workaround for certain use cases, but it's a lot harder to debug if you don't know how it works (and how `call` works).
+
+:pencil2: Change your code to set the inner function's `this` using `call`, or `bind`.  
 
 ## 1.3.0 Best practices summary for `this`
 
