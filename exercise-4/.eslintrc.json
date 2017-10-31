@@ -6,6 +6,6 @@
     "semi": "error",
     "brace-style": "error",
     "eqeqeq": "error",
-    "vars-on-top": "error",
+    "vars-on-top": "error"
   }
 }
