@@ -313,10 +313,10 @@ console.log(stringToPrint);
 
 :book: The code runs normally without throwing an error when you implicitly create the `stringToPrint` global variable inside the function.
 
-:pencil2: Try adding `use strict;`:
+:pencil2: Try adding `'use strict';`:
 
 ```JavaScript
-`use strict`;
+'use strict';
 function print(input) {
   stringToPrint = input; // here we implicitly create a global var
   console.log(stringToPrint);
