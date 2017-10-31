@@ -1,0 +1,12 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "semi": "error",
+    "brace-style": "error",
+    "eqeqeq": "error",
+    "vars-on-top": "error",
+    "strict": ["error", "global"]
+  }
+}

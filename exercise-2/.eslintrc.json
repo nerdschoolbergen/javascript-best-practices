@@ -1,0 +1,6 @@
+{
+    "rules": {
+      "semi": "error",
+      "brace-style": "error"
+    }
+}
