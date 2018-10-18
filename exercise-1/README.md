@@ -7,23 +7,33 @@ You will learn about:
  -  Curly braces
 
 ## Required software and tools for this exercise
-- [Atom](https://atom.io/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
 ## 0.0 - Dev environment setup
 
+### Node
 :exclamation: In this workshop we are going to use the Node.js to run JavaScript code from the command line.
 
 :pencil2: After installing [Node.js](https://nodejs.org), open up a command line window (Command Prompt or Powershell in Windows or Terminal in macOS) and type the following command:
 
 ```bash
-node -v
+$ node -v
 ```
 
-This should output something like this:
+This should output something like this if Node is correctly installed:
 ```
-v8.8.1
+v8.12.0
 ```
+
+### Visual Studio Code
+
+:exclamation: We are going to use Visual Studio Code (VS Code) to edit code.
+
+To install Visual Studio Code, please see the installation instructions:
+- [Windows setup](https://code.visualstudio.com/docs/setup/windows/)
+- [macOS setup](https://code.visualstudio.com/docs/setup/mac)
+- [Linux setup](https://code.visualstudio.com/docs/setup/linux)
 
 ## 1.1 - Semicolons
 
@@ -233,13 +243,20 @@ ESLint divides it's rules into several categories. From the [rules documentation
 - In a browser
 - ...and more
 
-For this workshop we are going to run ESLint in [Atom](https://atom.io/) via a package called [`linter-eslint`](https://atom.io/packages/linter-eslint).
+For this workshop we are going to run ESLint in VS Code via an editor extension called [`Eslint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
-:pencil2: To install `linter-eslint`, you can use the Install tab in the Settings View. Open up the Settings View using <kbd>Ctrl</kbd>+<kbd>,</kbd> (Windows) or <kbd>Cmd</kbd>+<kbd>,</kbd> (macOS), click on the "Install" tab and type `linter-eslint` into the box under Install Packages.
+:pencil2: The `Eslint` extension for VS Code requires that you install ESLint globally or inside the workspace folder that contains the JavaScript code to be validated. For ease of use we are going to do the former.
 
-![Installing linter-eslint](../images/ex1-installing-eslint.png)
+1. Open a command line window (Command Prompt or Powershell in Windows or Terminal in macOS)
+2. Run the following command:
+```bash
+$ npm install -g eslint
+```
 
-:pencil2: The `linter-eslint` package will come up with an "Install" button. Clicking that will download the package and install it.
+:pencil2: To install the `Eslint` extension in VS Code, use the Extensions view. Bring up the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code.
+
+![Extensions view icon](https://code.visualstudio.com/assets/docs/editor/extension-gallery/extensions-view-icon.png)
+Type in "Eslint" into  the search box at the top of the Extensions view and select the `Eslint` extension in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
 
 # 1.2.3 - Configuring ESLint
 
@@ -259,9 +276,9 @@ For this workshop we are going to run ESLint in [Atom](https://atom.io/) via a p
 
 # 1.2.4 - Running ESLint while editing code
 
-:pencil2: First you need to make sure that you have opened the root folder containing the git repository ("javascript-best-practices") as a _project folder_. Choose _File -> Open_ from the menu and select the `javascript-best-practices` repository directory.
+:pencil2: First you need to make sure that you have opened the root folder containing the git repository ("javascript-best-practices") as a _workspace folder_. Choose _File -> Open_ from the menu and select the `javascript-best-practices` repository directory.
 
-:pencil2: Using the Tree View on the left side of Atom window, open `exercise-1.js` inside the `exercise-1` folder. (If the Tree View is not showing, select _View -> Toggle Tree View_ from the menu.)
+:pencil2: Using the Explorer view on the left side of the VS Code window, open `exercise-1.js` inside the `exercise-1` folder. (If the Explorer view is not showing, click the Explorer icon in Activity Bar on the left side, or select _View -> Explorer_ from the menu.)
 
 Enter the following JavaScript code:
 
@@ -271,12 +288,13 @@ var y = 2
 console.log(x + y)
 ```
 
-If everything is configured correctly, Atom will notify you that the code
+If everything is configured correctly, VS Code will notify you that the code
 you just entered has some linting errors:
 
+** TODO: REPLACE IMAGE **
 <img src="../images/ex1-linting-error.png" width="450"/>
 
-:pencil2: Correct the errors in the code, and watch the red dots on the left side  disappear.
+:pencil2: Correct the errors in the code, and watch the red squiggly underlines in the editor disappear.
 
 # 1.3 - Curly braces
 
@@ -303,7 +321,7 @@ function myFunctionReturningAnObject()
 }
 ```
 
-:book: Because of ASI the return statement in the last function will get a semicolon inserted and the code will break because of the opening curly brace on the next line. Enter the code above into the `exercise-1.js` file. You will notice that Atom will notify you that the code has syntax errors.
+:book: Because of ASI the return statement in the last function will get a semicolon inserted and the code will break because of the opening curly brace on the next line. Enter the code above into the `exercise-1.js` file. You will notice that VS Code will notify you that the code has syntax errors.
 
 :pencil2: Fix the syntax error by placing the opening curly brace on the same
 line as the the return statement.
@@ -323,7 +341,7 @@ line as the the return statement.
 
 :book: The [`brace style`](https://eslint.org/docs/rules/brace-style) rule defaults to a style called _one true brace style_, which is the most common brace style in JavaScript and corresponds with how the return statement is formatted.
 
-:pencil2: Open the `exercise-1.js` code again and you should see that Atom will
+:pencil2: Open the `exercise-1.js` code again and you should see that VS Code will
 notify you that the opening curly braces for the functions are misplaced.
 
 :pencil2: Fix the styling error by moving the opening curly braces.
