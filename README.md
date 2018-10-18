@@ -1,6 +1,6 @@
 # JavaScript Best Practices
 
-![JavaScript](https://www.unixstickers.com/image/cache/data/stickers/js/js.sh-180x180.png)
+![JavaScript](images/jslogo.png)
 
 Best practices for JavaScript development
 
