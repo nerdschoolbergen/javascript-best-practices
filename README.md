@@ -4,7 +4,7 @@
 
 Best practices for JavaScript development
 
-## [Open presentation slides](https://docs.google.com/presentation/d/1Vv05pjwI2p_e1jpLcEwGpndEtkeBX5BtkKLT8ouUocw/edit?usp=sharing)
+## [Open presentation slides](https://docs.google.com/presentation/d/1KCTv-KHXHo6dpXpUPCybZmMz_F6VvZSzFnLrmpnyZBI/edit?usp=sharing)
 
 ## Focus of this workshop
 The focus of this workshop is best practices for JavaScript development. Rather than laying out "rules" to follow we are going to take a look a the _why_ behind the best practices, so that you can decide for yourself what's best for you.
