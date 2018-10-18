@@ -259,6 +259,8 @@ $ npm install -g eslint
 
 Type in "Eslint" into  the search box at the top of the Extensions view and select the _ESLint extension_ in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
 
+![Install ESLint extension](../images/ex1-installing-eslint.png)
+
 # 1.2.3 - Configuring ESLint
 
 :book: By default no rules are enabled in ESLint. In order to configure ESLint we need to create a file named `.eslintrc.json` in the `exercise-1` folder. To make things easier we have already added this file for you.
