@@ -5,7 +5,7 @@ You will learn about:
  - How to avoid polluting the global scope
 
 ## Required software and tools for this exercise
-- [Atom](https://atom.io/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
 ## 1.0 - Lexical scoping and closures
