@@ -5,7 +5,7 @@ You will learn about:
  - Truthy/falsy values
 
 ## Required software and tools for this exercise
-- [Atom](https://atom.io/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
 ## 1.1 - Equality

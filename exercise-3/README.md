@@ -6,7 +6,7 @@ You will learn about:
  - Strict mode
 
 ## Required software and tools for this exercise
-- [Atom](https://atom.io/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
 ## 1.0 - Variables and hoisting
