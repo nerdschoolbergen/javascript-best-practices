@@ -257,7 +257,7 @@ $ npm install -g eslint
 
 ![Extensions view icon](https://code.visualstudio.com/assets/docs/editor/extension-gallery/extensions-view-icon.png)
 
-Type in "Eslint" into  the search box at the top of the Extensions view and select the `Eslint` extension in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
+Type in "Eslint" into  the search box at the top of the Extensions view and select the _ESLint extension_ in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
 
 # 1.2.3 - Configuring ESLint
 
