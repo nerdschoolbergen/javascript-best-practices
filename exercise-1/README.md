@@ -259,7 +259,7 @@ $ npm install -g eslint
 
 Type in "Eslint" into  the search box at the top of the Extensions view and select the _ESLint extension_ in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
 
-![Install ESLint extension](../images/ex1-installing-eslint.png)
+![Install ESLint extension](../images/ex1-installing-eslint-vscode.png)
 
 # 1.2.3 - Configuring ESLint
 
