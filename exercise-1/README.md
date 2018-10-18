@@ -292,7 +292,6 @@ console.log(x + y)
 If everything is configured correctly, VS Code will notify you that the code
 you just entered has some linting errors:
 
-** TODO: REPLACE IMAGE **
 <img src="../images/ex1-linting-error.png" width="450"/>
 
 :pencil2: Correct the errors in the code, and watch the red squiggly underlines in the editor disappear.
