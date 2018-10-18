@@ -243,9 +243,9 @@ ESLint divides it's rules into several categories. From the [rules documentation
 - In a browser
 - ...and more
 
-For this workshop we are going to run ESLint in VS Code via an editor extension called [`Eslint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+For this workshop we are going to run ESLint in VS Code via an editor extension called [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
-:pencil2: The `Eslint` extension for VS Code requires that you install ESLint globally or inside the workspace folder that contains the JavaScript code to be validated. For ease of use we are going to do the former.
+:pencil2: The _ESlint extension_ for VS Code requires that you install the _ESLint linter_ globally or inside the workspace folder that contains the JavaScript code to be validated. For ease of use we are going to do the former.
 
 1. Open a command line window (Command Prompt or Powershell in Windows or Terminal in macOS)
 2. Run the following command:
@@ -253,9 +253,10 @@ For this workshop we are going to run ESLint in VS Code via an editor extension 
 $ npm install -g eslint
 ```
 
-:pencil2: To install the `Eslint` extension in VS Code, use the Extensions view. Bring up the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code.
+:pencil2: To install the _ESLint extension_ in VS Code, use the Extensions view. Bring up the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code.
 
 ![Extensions view icon](https://code.visualstudio.com/assets/docs/editor/extension-gallery/extensions-view-icon.png)
+
 Type in "Eslint" into  the search box at the top of the Extensions view and select the `Eslint` extension in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
 
 # 1.2.3 - Configuring ESLint
