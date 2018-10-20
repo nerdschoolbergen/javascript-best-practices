@@ -96,7 +96,7 @@ Now on to the real exercises!
 
 For example, the following code is perfectly valid JavaScript:
 
-```JavaScript
+```js
 var x = 1
 var y = 2
 console.log(x + y)
@@ -130,7 +130,7 @@ Let's name each of the conditions of the first rule a and b:
 
 So, in what cases will this be true? Consider the following code:
 
-```JavaScript
+```js
 var x = 1
 var y = 2
 if(x>0){y=3}
@@ -142,7 +142,7 @@ The next token is on line 2, hence it is separated from the last token by a "Lin
 
 Because of this first condition, a semicolon will therefore be inserted at the end of the first line and the second line (because `2 if` is not valid syntax):
 
-```JavaScript
+```js
 var x = 1;
 var y = 2;
 if(x>0){y=3}
@@ -156,7 +156,7 @@ console.log('hello world')
 
 Let's look at the code from after applying rule 1.a:
 
-```JavaScript
+```js
 var x = 1;
 var y = 2;
 if(x>0){y=3}
@@ -166,7 +166,7 @@ console.log('hello world')
 Next, the parser reads line 3 from left to right, and encounters a closing curly brace (`}`) after variable assignment `y=3`. `y=3}` is not valid syntax, and the result
 is that a semicolon is inserted before the so called _offending token_ (closing curly brace):
 
-```JavaScript
+```js
 var x = 1;
 var y = 2;
 if(x>0){y=3;}
@@ -185,7 +185,7 @@ Again, let's break down the terms:
 
 When reading the last line from left to right, the parser encounters the end of the line and the end of the script. A semicolon is therefore inserted at the end of the _input stream_, or after the closing paren in `console.log('hello world')`:
 
-```JavaScript
+```js
 var x = 1;
 var y = 2;
 if(x>0){y=3;}
@@ -200,7 +200,7 @@ console.log('hello world');
 
 So, in what cases does this apply? Let's have a look at the `return` statement in the following code:
 
-```JavaScript
+```js
 function addTwoNumbers(a, b) {
   return
   (a+b)
@@ -237,7 +237,7 @@ The output of the program should now be printed on the next line after the `node
 :book: The `return` statement expects an expression as the next token at _the same line_. In this case, the expression `(a+b)` is placed on the next line after the `return` statement,
 so in order to correct this syntax error a semicolon is inserted after the return statement:
 
-```JavaScript
+```js
 function addTwoNumbers(a, b) {
   return;
   (a+b);
@@ -361,7 +361,7 @@ eslint [options] file.js [file.js] [dir]
 
 Open `exercise-1.js` in the `exercise-1` folder and enter the following JavaScript code:
 
-```JavaScript
+```js
 var x = 1
 var y = 2
 console.log(x + y)
@@ -378,7 +378,7 @@ you just entered has some linting errors:
 
 :book: If you are used to C# or Java syntax, the following curly brace code style (called Allman style) will seem like the correct way to place opening curly braces:
 
-```JavaScript
+```js
 function myFancyFunction()
 {
   return "Important stuff";

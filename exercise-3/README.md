@@ -16,7 +16,7 @@ You will learn about:
 :book: Let's have a look at how defining variables work in JavaScript.
 
 Consider the following code:
-```JavaScript
+```js
 console.log(myVariable);
 ```
 
@@ -28,7 +28,7 @@ console.log(myVariable);
 
 :pencil2: Let's try adding a `myVariable` variable definition at the top:
 
-```JavaScript
+```js
 var myVariable;
 console.log(myVariable);
 ```
@@ -42,7 +42,7 @@ console.log(myVariable);
 ## 1.0.2 - Variable hoisting
 
 :pencil2: Let's try moving the `myVariable` definition to the buttom:
-```JavaScript
+```js
 console.log(myVariable);
 var myVariable;
 ```
@@ -52,7 +52,7 @@ var myVariable;
 :pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
 
 :exclamation: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "**hoists**" or lifts all variable _creations_ to the top of the current scope before running the code. The `myVariable` variable will be created at the top of the current scope, and set to `undefined`. This is called _variable hoisting_ or just _hoisting_.
-```JavaScript
+```js
 var myVariable; // hoisted variable, created By JavaScript
 console.log(myVariable);
 var myVariable; // this line has no effect
@@ -60,7 +60,7 @@ var myVariable; // this line has no effect
 
 :pencil2: Let't try assigning a value to the variable:
 
-```JavaScript
+```js
 console.log(myVariable);
 var myVariable = 'Hello Nerdschool!';
 ```
@@ -71,7 +71,7 @@ var myVariable = 'Hello Nerdschool!';
 
 :exclamation: Why does the code still behave the same? Because the _value_ assignment of the `myVariable` variable will _not_ be hoisted by JavaScript. In effect, the code now looks like this:
 
-```JavaScript
+```js
 var myVariable; // hoisted variable, created by JavaScript
 console.log(myVariable);
 var myVariable = 'Hello Nerdschool';
@@ -88,7 +88,7 @@ Next we are going to look at why this can cause problems when dealing with funct
 :book: Each time you create a function in JavaScript, a _scope_ is also created.
 
 Consider the following code that prints two different variables, one declared inside the function and one outside:
-```JavaScript
+```js
 var myMessage = 'A message';
 
 function printStuff() {
@@ -105,7 +105,7 @@ printStuff();
 
 :book: Let's try changing the code a bit by adding a `console.log()` statement to the bottom:
 
-```JavaScript
+```js
 var myMessage = 'A message';
 
 function printStuff() {
@@ -130,7 +130,7 @@ console.log(anotherMessage); // add this line
 :book: As we saw in the last task, we can access variables created _outside_ a function.
 
 Let's try changing the code a bit by assigning a value to `myMessage` inside the function and logging out the value of `myMessage` in the last line. Remember to remove the second `console.log()` statement inside the function as well:
-```JavaScript
+```js
 var myMessage = 'A message';
 
 function printStuff() {
@@ -151,7 +151,7 @@ console.log(myMessage); // changed
 
 :book: Let's try modifying the code from the last task yet again:
 
-```JavaScript
+```js
 var myMessage = 'A message';
 
 function printStuff() {
@@ -169,7 +169,7 @@ console.log(myMessage);
 
 :book: The code now outputs "Testing 123" and then "A message". Hoisting will move the `var myMessage` declaration inside the function to the top of it's scope. The result will be:
 
-```JavaScript
+```js
 var myMessage = 'A message';
 
 function printStuff() {
@@ -188,7 +188,7 @@ console.log(myMessage);
 :exclamation: **Best practice:** Always put variable declarations at the top of the scope where you declare them to avoid accidental hoisting. Assignment can be done at a later time. Never use variables before defining them.
 
 Best practice #4 example:
-```JavaScript
+```js
 var a;
 var b;
 
@@ -235,7 +235,7 @@ console.log(b);
 
 :pencil2: Remove all code from `exercise-3.js` and add the following:
 
-```JavaScript
+```js
 a = 1;
 var a;
 
@@ -299,7 +299,7 @@ function foo() {
 
 :pencil2: Let's look at a code example related to the code from previous tasks. Remove all code from `exercise-3.js` and add the following:
 
-```JavaScript
+```js
 function print(input) {
   stringToPrint = input; // here we implicitly create a global var
   console.log(stringToPrint);
@@ -315,7 +315,7 @@ console.log(stringToPrint);
 
 :pencil2: Try adding `'use strict';`:
 
-```JavaScript
+```js
 'use strict';
 function print(input) {
   stringToPrint = input; // here we implicitly create a global var

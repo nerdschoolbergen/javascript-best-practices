@@ -255,7 +255,7 @@ To work around this issue we can create a new scope that works as a "wrapper" ar
 
 Function declarations you know already (the "normal" way):
 
-```JavaScript
+```js
 function myFunc() {
   // do stuff
 }
@@ -264,7 +264,7 @@ myFunc();
 
 The other way is via Function expressions by using the `function` keyword:
 
-```JavaScript
+```js
 var myFunc = function() {
   // do stuff
 };
@@ -273,7 +273,7 @@ myFunc();
 
 :book: The last one is a bit weird, because we are assigning the function to a variable. Functions in JavaScript are like any other object, and because of this you can assign them to variables or even properties of objects:
 
-```JavaScript
+```js
 var myObj = {
   myFunc: function() {
     // do stuff
@@ -286,7 +286,7 @@ myObj.myFunc();
 
 For example:
 
-```JavaScript
+```js
 3 + 4; // This is an expression even if it is not assigned to a variable
 3 + (4 * 4); // This is an example of using the grouping operator
 console.log((4/3)+2) // The expression resolved to a velue before it is logged
@@ -294,7 +294,7 @@ console.log((4/3)+2) // The expression resolved to a velue before it is logged
 
 :book: The `function` keyword we used to create functions earlier can be used to define a function _inside_ an expression:
 
-```JavaScript
+```js
 (function() {
   // do stuff
 });
@@ -302,7 +302,7 @@ console.log((4/3)+2) // The expression resolved to a velue before it is logged
 
 :book: If we want to _execute_ the function, we add a `()` at the end:
 
-```JavaScript
+```js
 (function() {
     // do stuff
 })();
@@ -316,7 +316,7 @@ console.log((4/3)+2) // The expression resolved to a velue before it is logged
 
 :pencil2: Try modifying the code a bit by declaring a varible inside the IIFE and try to access it outside:
 
-```JavaScript
+```js
 (function() {
     var myPrivateVar = 1;
 })();
@@ -344,7 +344,7 @@ A module...
 
 An example:
 
-```JavaScript
+```js
 // HelloWorld.js
 var helloWorld = function() {
  return "Hello World!";
@@ -354,7 +354,7 @@ export default HelloWorld;
 
 Importing the module:
 
-```JavaScript
+```js
 // Main.js
 import helloWorld from './HelloWorld.js';
 consolel.log(helloWorld());
@@ -372,7 +372,7 @@ As mentioned in exercise 3, the `let` keyword creates variables scoped to the cu
 
 :pencil2: Try adding the following code to `exercise-4.js`:
 
-```JavaScript
+```js
 (function() {
   if(true) {
     let x = 1;
@@ -406,7 +406,7 @@ ESLint will complain about the `let` keyword. This is because we need to configu
 
 Here is a simpler version:
 
-```JavaScript
+```js
 (function() {
   {
     let x = 1;

@@ -19,7 +19,7 @@ These operators both takes one operand on the left and right side and returns a 
 ## 1.1.1 - Loose equality
 
 Consider the following code:
-```JavaScript
+```js
 var a = 1;
 var b = '1';
 
@@ -56,7 +56,7 @@ Before comparing the two values on each side of the operator, it looks at the da
 This behaviour can have some some potentially unintended effects.
 
 Let's pretend we are going to compare a number and a boolean:
-```JavaScript
+```js
 var a = 0;
 var b = false;
 
@@ -126,7 +126,7 @@ if(areEqual(a, b)) {
 
 :pencil2: Open `exercise-2.js` and add the following code:
 
-```JavaScript
+```js
 var x = 1;
 var y = '0';
 var areTheyEqual = x == y;
@@ -143,7 +143,7 @@ The linter should alert you that you have an error related to the `eqeqeq` rule 
 In other words, truthy values are true-_ish_ and falsy values are false-_ish_. This is one of the major gotchas in JavaScript.
 
 Consider the following code:
-```JavaScript
+```js
 var x = false;
 if (x) {
   console.log('Value is truthy');
