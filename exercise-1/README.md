@@ -1,39 +1,92 @@
 # Exercise 1 - Syntax
+
 This exercise will focus on JavaScript syntax.
 
 You will learn about:
- - Semicolons and Automatic Semicolon Insertion (ASI)
- - Linting
- -  Curly braces
+
+- Semicolons and Automatic Semicolon Insertion (ASI)
+- Linting
+- Curly braces
 
 ## Required software and tools for this exercise
+
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
 ## 0.0 - Dev environment setup
 
-### Node
+:book: First, we need to do some preparation of our development environment.
+
+### Node.js
+
+<img src="../images/nodejs-logo.png" width="100"/>
+
 :exclamation: In this workshop we are going to use the Node.js to run JavaScript code from the command line.
 
 :pencil2: After installing [Node.js](https://nodejs.org), open up a command line window (Command Prompt or Powershell in Windows or Terminal in macOS) and type the following command:
 
 ```bash
-$ node -v
+node -v
 ```
 
 This should output something like this if Node is correctly installed:
-```
+
+```bash
 v8.12.0
 ```
 
 ### Visual Studio Code
 
+<img src="../images/vscode-logo.png" width="100"/>
+
 :exclamation: We are going to use Visual Studio Code (VS Code) to edit code.
 
-To install Visual Studio Code, please see the installation instructions:
-- [Windows setup](https://code.visualstudio.com/docs/setup/windows/)
-- [macOS setup](https://code.visualstudio.com/docs/setup/mac)
-- [Linux setup](https://code.visualstudio.com/docs/setup/linux)
+:pencil2: To install Visual Studio Code, please see the installation instructions for your platform:
+
+- [Windows](https://code.visualstudio.com/docs/setup/windows/)
+- [macOS](https://code.visualstudio.com/docs/setup/mac)
+- [Linux](https://code.visualstudio.com/docs/setup/linux)
+
+### Exercise files
+
+:pencil2: If you know how to use git, clone the [GitHub repository](https://github.com/nerdschoolbergen/javascript-best-practices) to a folder on your computer.
+
+:pencil2: If you don't know how to use git, open the [GitHub repository](https://github.com/nerdschoolbergen/javascript-best-practices), then click the green "Clone or download" button and then click on "Download ZIP". Unzip the downloaded file to a folder on your computer.
+
+#### Folder structure
+
+:book: The repository contains a set of folders used for each exercise:
+
+```bash
+├── exercise-1
+│   ├── .eslintrc.json
+│   ├── exercise-1.js
+│   └── README.md
+├── exercise-2
+│   ├── .eslintrc.json
+│   ├── exercise-2.js
+│   └── README.md
+├── exercise-3
+│   ├── .eslintrc.json
+│   ├── exercise-3.js
+│   └── README.md
+├── exercise-4
+│   ├── .eslintrc.json
+│   ├── exercise-4.js
+│   └── README.md
+```
+
+### Setting up the workspace in VS Code
+
+:book: We need to open the folder containing the git repository you've just cloned/downloaded to your computer ("javascript-best-practices") as a _workspace folder_ in VS Code.
+
+:pencil2: Choose _File -> Open_ from the VS Code menu and select the `javascript-best-practices` repository directory on your computer to select this folder as your _workspace folder_. Make sure you select the directory, not a file inside the folder.
+
+### Editing files in the workspace
+
+:pencil2: Using the Explorer view on the left side of the VS Code window, try opening `exercise-1.js` inside the `exercise-1` folder. (If the Explorer view is not showing, click the Explorer icon in Activity Bar on the left side, or select _View -> Explorer_ from the menu.)
+
+Now on to the real exercises!
 
 ## 1.1 - Semicolons
 
@@ -47,7 +100,7 @@ var y = 2
 console.log(x + y)
 ```
 
-:book: So why does this work? JavaScript has a built in feature called _Automatic Semicolon Insertion (ASI)_. ASI inserts, as the name implies, semicolons in your code automatically before it is run. This means semicolons are technically optional in JavaScript in many cases. However, there are some cases where not using semicolons can lead to problems. So in order to fully understand how this feature works, we will go through the rules.
+:book: So why does this work? JavaScript has a built in feature called _Automatic Semicolon Insertion (ASI)_. ASI inserts, as the name implies, semicolons in your code automatically before it is run. This means semicolons are _technically optional_ in JavaScript in many cases. However, there are some cases where not using semicolons can lead to problems. So in order to fully understand how this feature works, we will go through the rules.
 
 There are three ASI rules:
 
@@ -55,10 +108,11 @@ There are three ASI rules:
 
 :book: Rule #1 from the JavaScript spesification states:
 > When, as the program is parsed from left to right, a token (called the offending token) is encountered that is not allowed by any production of the grammar, then a semicolon is automatically inserted before the offending token if one or more of the following conditions is true:
->  - The offending token is separated from the previous token by at least one LineTerminator.
->  - The offending token is }.
+> - The offending token is separated from the previous token by at lest one _LineTerminator_.
+> - The offending token is `}`.
 
 What does this mean? Let's break down the terms:
+
 - **Parsing**: The process of converting your code into a _syntax tree_ before compiling it.
 - **Token**: A token is a piece of code, for example `var`, `x`, `=`, and so on
 - **Offending token**: A piece of code that cannot be placed after the previous piece of code
@@ -69,15 +123,15 @@ Let's name each of the conditions of the first rule a and b:
 
 #### ASI Rule 1.a
 
-:book: The first condition of ASI Rule #1 states:
-> The offending token is separated from the previous token by at least one LineTerminator.
+:book: As we saw earlier, the first condition of ASI Rule #1 states:
+> The offending token is separated from the previous token by at least one _LineTerminator_.
 
 So, in what cases will this be true? Consider the following code:
 
 ```JavaScript
 var x = 1
 var y = 2
-if(x){console.log(x)}
+if(x>0){y=3}
 console.log(y)
 ```
 
@@ -99,6 +153,7 @@ console.log('hello world')
 > The offending token is }.
 
 Let's look at the code from after applying rule 1.a:
+
 ```JavaScript
 var x = 1;
 var y = 2;
@@ -122,10 +177,12 @@ console.log('hello world')
 > When, as the program is parsed from left to right, the end of the input stream of tokens is encountered and the parser is unable to parse the input token stream as a single complete ECMAScript Program, then a semicolon is automatically inserted at the end of the input stream.
 
 Again, let's break down the terms:
-- **input stream**: A sequence of text characters representing the code
+
+- **Input stream**: A sequence of text characters representing the code
 - **ECMAScript Program**: A piece JavaScript code can be compiled and run
 
 When reading the last line from left to right, the parser encounters the end of the line and the end of the script. A semicolon is therefore inserted at the end of the _input stream_, or after the closing paren in `console.log('hello world')`:
+
 ```JavaScript
 var x = 1;
 var y = 2;
@@ -160,12 +217,14 @@ To run the code using Node.js, do the following:
 3. Run the `exercise-1.js` file by typing:
 
 Windows:
+
 ```powershell
 node exercise-1\exercise-1.js
 ```
 
 macOS/Linux:
-```powershell
+
+```bash
 node exercise-1/exercise-1.js
 ```
 
@@ -189,6 +248,7 @@ console.log('Result:', addTwoNumbers(1,2))
 :pencil2: Try modifying the code so that the `addTwoNumbers()` function returns the correct result. Run the code again using Node.js to verify the result.
 
 :book: This problem applies to the following statements:
+
 - `continue`
 - `break`
 - `return`
@@ -204,7 +264,7 @@ console.log('Result:', addTwoNumbers(1,2))
 
 Now on to some more interesting stuff.
 
-# 1.2 - Linting
+## 1.2 - Linting
 
 :book: According to Wikipedia, the definition of a _lint_ in the context of software is:
 
@@ -215,14 +275,14 @@ using a tool to analyse your JavaScript will help you write better code.
 
 There are several JavaScript linting tools available, for this workshop we have chosen [ESLint](https://eslint.org/) because of it's configurability and number of linting rules available.
 
-# 1.2.1 - ESLint overview
+### 1.2.1 - ESLint overview
 
 <img src="https://camo.githubusercontent.com/e69fbfc8dc529fda880b1890f43fa0aec6ab5cb6/687474703a2f2f65736c696e742e6f72672f696d672f6c6f676f2e737667" width="100"/>
 
-:book: ESLint will analyse your JavaScript code and return a set of errors or warnings depending
-on which linting rules you have configured it to use.
+:book: ESLint will analyse your JavaScript code and return a set of errors or warnings depending on which linting rules you have configured it to use.
 
 ESLint divides it's rules into several categories. From the [rules documentation](https://eslint.org/docs/rules/):
+
 - **Possible errors** - These rules relate to possible syntax or logic errors in JavaScript code
 - **Best Practices** - These rules relate to better ways of doing things to help you avoid problems
 - **Variables** - These rules relate to variable declarations
@@ -232,9 +292,10 @@ ESLint divides it's rules into several categories. From the [rules documentation
 
 :exclamation: This workshop will _not_ go through all possible rules (as there are too many), instead we will focus on a _small subset of rules_ that illustrate the best practices we are going to cover in the exercises.
 
-# 1.2.2 - Getting ESLint up and running
+### 1.2.2 - Getting ESLint up and running
 
 :book: ESLint can be run in multiple ways:
+
 - From the command line
 - Via a code editor (many integrations available)
 - Via a build tool
@@ -247,43 +308,56 @@ For this workshop we are going to run ESLint in VS Code via an editor extension 
 
 :pencil2: The _ESlint extension_ for VS Code requires that you install the _ESLint linter_ globally or inside the workspace folder that contains the JavaScript code to be validated. For ease of use we are going to do the former.
 
-1. Open a command line window (Command Prompt or Powershell in Windows or Terminal in macOS)
-2. Run the following command:
+#### Installing ESLint
+
+:pencil2: Open a command line window (Command Prompt or Powershell in Windows or Terminal in macOS)
+
+:pencil2: Run the following command:
+
 ```bash
 $ npm install -g eslint
+...
++ eslint@5.7.0
+added 125 packages from 149 contributors in 50.478s
 ```
+
+:pencil2: Verify that eslint is working by running ESLint from the command line using the NodeJS `npx` command:
+
+```bash
+$ npx eslint
+eslint [options] file.js [file.js] [dir]
+...
+```
+
+#### Installing the ESLint extension for VS Code
 
 :pencil2: To install the _ESLint extension_ in VS Code, use the Extensions view. Bring up the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code.
 
 ![Extensions view icon](https://code.visualstudio.com/assets/docs/editor/extension-gallery/extensions-view-icon.png)
 
-Type in "Eslint" into  the search box at the top of the Extensions view and select the _ESLint extension_ in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
+:pencil2: Type in "Eslint" into  the search box at the top of the Extensions view and select the _ESLint extension_ in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
 
 ![Install ESLint extension](../images/ex1-installing-eslint-vscode.png)
 
-# 1.2.3 - Configuring ESLint
+### 1.2.3 - Configuring ESLint
 
-:book: By default no rules are enabled in ESLint. In order to configure ESLint we need to create a file named `.eslintrc.json` in the `exercise-1` folder. To make things easier we have already added this file for you.
+:book: By default no rules are enabled in ESLint. In order to configure ESLint we need to create a file named `.eslintrc.json` in the `exercise-1` folder. To make things easier we have already added this file for you. (New to the JSON format? [Read about it here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).)
 
-:pencil2: Add the following to enable the [`semi` rule](https://eslint.org/docs/rules/semi):
+:pencil2: Add the following line to enable the [`semi` rule](https://eslint.org/docs/rules/semi):
 
-```json
+```diff
 {
     "rules": {
-        "semi": "error"
++       "semi": "error"
     }
 }
 ```
 
-:exclamation: This rule enforces consistent use of semicolons.
+:exclamation: This rule enforces consistent use of semicolons by reporting an _linting error_ if the rule is violated.
 
-# 1.2.4 - Running ESLint while editing code
+### 1.2.4 - Running ESLint while editing code
 
-:pencil2: First you need to make sure that you have opened the root folder containing the git repository ("javascript-best-practices") as a _workspace folder_. Choose _File -> Open_ from the menu and select the `javascript-best-practices` repository directory.
-
-:pencil2: Using the Explorer view on the left side of the VS Code window, open `exercise-1.js` inside the `exercise-1` folder. (If the Explorer view is not showing, click the Explorer icon in Activity Bar on the left side, or select _View -> Explorer_ from the menu.)
-
-Enter the following JavaScript code:
+Open `exercise-1.js` in the `exercise-1` folder and enter the following JavaScript code:
 
 ```JavaScript
 var x = 1
@@ -298,9 +372,9 @@ you just entered has some linting errors:
 
 :pencil2: Correct the errors in the code, and watch the red squiggly underlines in the editor disappear.
 
-# 1.3 - Curly braces
+## 1.3 - Curly braces
 
-:book: If you are used to C# or Java syntax the following curly brace code style (called Allman style) will seem like the correct way to place opening curly braces:
+:book: If you are used to C# or Java syntax, the following curly brace code style (called Allman style) will seem like the correct way to place opening curly braces:
 
 ```JavaScript
 function myFancyFunction()
@@ -325,21 +399,22 @@ function myFunctionReturningAnObject()
 
 :book: Because of ASI the return statement in the last function will get a semicolon inserted and the code will break because of the opening curly brace on the next line. Enter the code above into the `exercise-1.js` file. You will notice that VS Code will notify you that the code has syntax errors.
 
-:pencil2: Fix the syntax error by placing the opening curly brace on the same
-line as the the return statement.
+:pencil2: Fix the syntax error by placing the opening curly brace on the same line as the the return statement.
 
 :exclamation: Notice that now you have two different styles of placing curly braces, the Allman (C#/Java) style for the functions and the open curly brace on same line style (required because of the return statement).
 
 :pencil2: This creates confusion, so we can configure ESLint to enforce a curly brace style via the [`brace style`](https://eslint.org/docs/rules/brace-style) rule:
 
-```json
+```diff
 {
     "rules": {
       "semi": "error",
-      "brace-style": "error"
++     "brace-style": "error"
     }
 }
 ```
+
+:exclamation: Remember to insert a comma at the end of the `"semi"`-line!
 
 :book: The [`brace style`](https://eslint.org/docs/rules/brace-style) rule defaults to a style called _one true brace style_, which is the most common brace style in JavaScript and corresponds with how the return statement is formatted.
 
@@ -350,4 +425,12 @@ notify you that the opening curly braces for the functions are misplaced.
 
 :exclamation: **Best practice:** _Use the one true brace style_ for braces in your code.
 
-### [Go to exercise 2 ==>](../exercise-2/README.md)
+## Best practices summary
+
+So far, we've covered the following:
+
+- _Use semicolons_. If you insist on not using them, learn the ASI rules well to avoid trouble.
+- _Use a linter (like ESLint) to help you write better code_.
+- _Use the one true brace style_ for braces in your code.
+
+## [Go to exercise 2 ==>](../exercise-2/README.md)
