@@ -425,6 +425,6 @@ Here is a simpler version:
 
 ## Further reading
 
-- [_Javascript: The Good Parts_](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) by Douglas Crockford
+- [_JavaScript: The Good Parts_](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) by Douglas Crockford
 - [AirBnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Setting up ESLint on VS Code with Airbnb JavaScript Style Guide](https://travishorn.com/setting-up-eslint-on-vs-code-with-airbnb-javascript-style-guide-6eb78a535ba6)
