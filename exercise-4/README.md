@@ -422,3 +422,9 @@ Here is a simpler version:
 :book: As we mentioned about in exercise 3, the `const` keyword let's you define variables that cannot be _reassigned_. It also behaves the same as `let` when it comes to scoping.
 
 :exclamation: **Best practice:** If you are using ES6 (or newer) and you are not using modules, _use `let` and `const` for encapsulation instead of IIFEs_.
+
+## Further reading
+
+- [_Javascript: The Good Parts_](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) by Douglas Crockford
+- [AirBnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [Setting up ESLint on VS Code with Airbnb JavaScript Style Guide](https://travishorn.com/setting-up-eslint-on-vs-code-with-airbnb-javascript-style-guide-6eb78a535ba6)
