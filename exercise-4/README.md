@@ -53,7 +53,7 @@ function funkyBusiness() {
 ```
 
 :pencil2: Assign a variable to the `global` object, for example a string containing a message.  
-:pencil2: Below the assignment you did above, create a function where you log `this.YOUR_VARIABLE`
+:pencil2: Below the assignment you did above, create a function where you log `this.YOUR_VARIABLE`  
 
 For example (please write it out yourself):
 
@@ -65,19 +65,22 @@ function greet() {
 greet();
 ```
 
-:pencil2: Run the code and you should see your message printed to the console. This confirms that `this` inside a function and `global` is the same object.  
+:pencil2: Run the code and you should see your message printed to the console. This confirms that `this` inside a function and `global` is the same object.
 
-(This is weird and scary, and a good rule of thumb in JavaScript is that whenever the language does not know what to do with a value you declare, it will put it on the global scope and go about its business. A lot of the "magic" in JavaScript and it's "It Just Works" functionality is also the same thing - it just puts your mess on the global scope.  While this is helpful (it doesn't crash), it is a source of a lot of misunderstandings and bad practices. We always want to avoid the global scope if possible).
+(This is weird and scary, and a good rule of thumb in JavaScript is that whenever the language does not know what to do with a value you declare, it will put it on the global scope and go about it's business. A lot of the "magic" in JavaScript and it's "It Just Works" functionality is also the same thing - it just puts your mess on the global scope.  While this is helpful (it doesn't crash), it is a source of a lot of misunderstandings and bad practices. We always want to avoid the global scope if possible).
 
 ## 1.1 - Strict mode
 
 You probably noticed that the description of _Global context_ and _Function context_ above was identical. Well, that changes when we use _Strict Mode_.
 
-As described earlier, _Strict mode_ is something we can enable to make the language stricter and safer.
+As described earlier in exercise 3, _Strict mode_ is something we can enable to make the language stricter and safer.
+
+Strict mode can be enabled both globally for an entire script like we did in exercise 3, or in a function.
 
 When we enable strict mode in a function, the function's `this` context changes.
 
-:pencil2: Enable strict mode in the function you made.  
+:pencil2: Enable strict mode in the function you made by adding `'use strict'` inside the function.
+
 :pencil2: Run the code again.  
 
 You should now see the error `TypeError: Cannot read property 'YOUR_VARIABLE' of undefined` in the console. So what happened?
@@ -113,10 +116,11 @@ greet.call({ hi: 'hei' }, 'eirik');
 
 ### 1.1.2 `bind()`
 
-Like `call`, `bind` exists to let us set `this` on a function. However, `bind` will set the `this` context without actually invoking the function like `call` does. With bind we say "remember to use this object as your `this` context whenever I call you later on". With call we say "Invoke this function right now using this object as your `this` context".
+:book: Like `call`, `bind` exists to let us set `this` on a function. However, in contrast to `call`, `bind` creates a new function with `this` set to the value provided as the first argument. This means that you also need to execute the returned function. With bind we say "create a new function that uses this object as your `this` context whenever I call you later on". With `call` we say "invoke this function right now using this object as your `this` context".
 
 ```js
 function greet(name) {
+  'use strict';
   console.log(this.hi + ' ' + name);
 }
 greet = greet.bind({ hi: 'helloooo' });
@@ -170,11 +174,11 @@ This workaround is very common and an accepted solution by the community. We do 
 ## 1.3.0 Best practices summary for `this`
 
 - Avoid global scope.
-- _Use strict_ in functions.
+- _Use strict_ in functions/globally.
 - Specify a "strict function"'s `this` context by using `call`, `apply`, or `bind`.
 - Use lint rules to avoid multiple aliases for `this` access.
 
-## 1.4.0 Classes
+## 1.4.0 Classes (ES6/ES2015)
 
 We're not going to dive deep into JavaScript classes here, but we want to just touch on the basics so you can see they're really nothing special, and that scoping (and `this`) for a class is just like what we have already discussed above.
 
@@ -203,9 +207,9 @@ Foo.prototype.bar = function() {
 
 So you see, it's just functions under the hood. A class containing functions is just compiled into an outer function wrapping other inner functions. The same rules regarding `this` etc applies here just like anywhere else in the language. What classes gives you, though, is a lot less boilerplate to write, easier code to read and maintain, and managing `this` with `call` is handled for you behind the scenes. There is nothing a class can do that we couldn't do before in the language (including inheritance/`extends`), it just gives us a nicer wrapping around it, which is nice, and very much welcomed.
 
-## 1.5.0 Lambdas
+## 1.5.0 Lambdas (ES6/ES2015)
 
-The newer versions of the language introduced _lambdas_ or _arrow functions_, which you might recognize from many other languages.
+ES6/ES2015 introduced _lambdas_ or _arrow functions_, which you might recognize from many other languages.
 
 ```js
 // Single-line lambda function that takes no arguments and returns 'hello'
@@ -428,3 +432,4 @@ Here is a simpler version:
 - [_JavaScript: The Good Parts_](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) by Douglas Crockford
 - [AirBnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Setting up ESLint on VS Code with Airbnb JavaScript Style Guide](https://travishorn.com/setting-up-eslint-on-vs-code-with-airbnb-javascript-style-guide-6eb78a535ba6)
+- [MDN web docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
