@@ -23,7 +23,9 @@ You will learn about:
 
 :exclamation: In this workshop we are going to use the Node.js to run JavaScript code from the command line.
 
-:pencil2: After installing [Node.js](https://nodejs.org), open up a command line window (Command Prompt or Powershell in Windows or Terminal in macOS) and type the following command:
+:pencil2: Download the latest _Long Term Service (LTS)_ release from [Node.js](https://nodejs.org). As of october 2018, the latest LTS release is 8.12.0.
+
+:pencil2: Open up a command line window (Command Prompt or Powershell in Windows or Terminal in macOS) and type the following command:
 
 ```bash
 node -v
