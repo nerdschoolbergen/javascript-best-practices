@@ -22,7 +22,7 @@ Consider the following code:
 
 ```js
 function createGreeter() {
-  this.greeting = "hello";
+  this.greeting = 'hello';
 }
 ```
 
@@ -48,7 +48,7 @@ When in _Function context_, `this` refers to the `global` object. If you're in a
 this.wat = 'huh?';
 
 function funkyBusiness() {
-  return this.wat; // "huh?"
+  return this.wat; // 'huh?'
 }
 ```
 
@@ -347,7 +347,7 @@ An example:
 ```js
 // HelloWorld.js
 var helloWorld = function() {
- return "Hello World!";
+ return 'Hello World!';
 }
 export default HelloWorld;
 ```
