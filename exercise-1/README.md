@@ -82,7 +82,7 @@ v8.12.0
 
 :book: We need to open the folder containing the git repository you've just cloned/downloaded to your computer ("javascript-best-practices") as a _workspace folder_ in VS Code.
 
-:pencil2: Choose _File -> Open_ from the VS Code menu and select the `javascript-best-practices` repository directory on your computer to select this folder as your _workspace folder_. Make sure you select the directory, not a file inside the folder.
+:pencil2: Choose _File -> Open_ from the VS Code menu and select the `javascript-best-practices` repository directory on your computer to set this folder as your _workspace folder_. Make sure you select the directory, not a file inside the folder.
 
 ### Editing files in the workspace
 
