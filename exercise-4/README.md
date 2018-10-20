@@ -1,10 +1,12 @@
 # Exercise 4 - Patterns
 
 You will learn about:
+
  - Lexical scope and this
  - How to avoid polluting the global scope
 
 ## Required software and tools for this exercise
+
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
@@ -24,7 +26,8 @@ function createGreeter() {
 }
 ```
 
-At this point you might ask
+At this point you might ask:
+
 - What is `this` set to in this example?
 - Where does `this` come from?
 
@@ -360,6 +363,7 @@ consolel.log(helloWorld());
 As mentioned in exercise 3, the `let` keyword creates variables scoped to the current _block_, not function scope or global scope.
 
 :pencil2: Try adding the following code to `exercise-4.js`:
+
 ```JavaScript
 (function() {
   if(true) {
@@ -369,14 +373,16 @@ As mentioned in exercise 3, the `let` keyword creates variables scoped to the cu
 })();
 ```
 
-ESLint will complain about the `let` keyword. This is because we need to configure ES6 support in `.eslintrc.json`.
+ESLint will complain about the `let` keyword. This is because we need to configure ES6/ES2015 support in `.eslintrc.json`.
 
 :pencil2: Insert the `"parserOptions"` key at the top of `excercise-4\.eslintrc.json`:
-```json
+
+```diff
 {
-  "parserOptions": {
     "ecmaVersion": 6
-  },
++ "parserOptions": {
++   "ecmaVersion": 2015
++ },
   "rules": {
     "semi": "error",
     "brace-style": "error",

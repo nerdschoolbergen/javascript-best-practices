@@ -47,7 +47,7 @@ Before comparing the two values on each side of the operator, it looks at the da
 - Number (`3.14`, `1`)
 - String (`"Nerdschool rocks"`)
 - Object (`{a:1}`, `["apples", "pears", "oranges"]` )
-- Symbol (ES6, created via the `Symbol()` function)
+- Symbol (New in ES2015, created via the `Symbol()` function)
 
 :exclamation: If the types are identical, for example a string and a string, the loose equality operator (`==`) just performs the equality comparison. However, if the types are _not identical, it converts both values to a common type _before_ doing the equality comparison.
 
