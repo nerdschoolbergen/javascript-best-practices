@@ -132,7 +132,7 @@ greet('eirik');
 
 ### 1.1.3 Accessing `this` in sub-functions
 
-An often occurring problem is accessing `this` which lives outside the current function.
+:book: An often occurring problem is accessing `this` which lives outside the current function.
 
 Consider the following code:
 
@@ -153,9 +153,8 @@ Well, as mentioned earlier, in JavaScript, functions is the lexical scope to whi
 
 ```js
 function greet(name) {
-  this.smiley = '=D';
-
   var that = this;
+  that.smiley = '=D';
 
   function sayHello() {
     console.log(that.hi + ' ' + name + ' ' + that.smiley);
