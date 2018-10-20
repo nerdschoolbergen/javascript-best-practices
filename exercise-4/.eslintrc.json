@@ -1,7 +1,4 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 2015
-  },
   "rules": {
     "semi": "error",
     "brace-style": "error",
