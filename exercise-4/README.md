@@ -249,10 +249,12 @@ To work around this issue we can create a new scope that works as a "wrapper" ar
 ### 2.1.0 - IIFEs
 
 :book: Before we get into what an "IIFE" is, we need to go over some JavaScript function basics. There are two ways of creating a function in JavaScript:
+
 - Via function declarations
 - Via Function expressions
 
 Function declarations you know already (the "normal" way):
+
 ```JavaScript
 function myFunc() {
   // do stuff
@@ -261,6 +263,7 @@ myFunc();
 ```
 
 The other way is via Function expressions by using the `function` keyword:
+
 ```JavaScript
 var myFunc = function() {
   // do stuff
@@ -282,6 +285,7 @@ myObj.myFunc();
 :book: Expressions in JavaScript are any valid unit of code that resolves to a value.
 
 For example:
+
 ```JavaScript
 3 + 4; // This is an expression even if it is not assigned to a variable
 3 + (4 * 4); // This is an example of using the grouping operator
@@ -297,6 +301,7 @@ console.log((4/3)+2) // The expression resolved to a velue before it is logged
 ```
 
 :book: If we want to _execute_ the function, we add a `()` at the end:
+
 ```JavaScript
 (function() {
     // do stuff
@@ -331,6 +336,7 @@ This is because the IIFE creates a new scope inside it, where you can declare al
 :book: ECMAScript 6 has a feature called modules, which helps you structure code in an efficient way.
 
 A module...
+
 - ...is a JavaScript file that that exposes one or more functions via the `export` keyword
 - ...can import other modules via the `import` keyword in order to call other modules
 - ...has strict mode enabled by default
@@ -347,13 +353,14 @@ export default HelloWorld;
 ```
 
 Importing the module:
+
 ```JavaScript
 // Main.js
 import helloWorld from './HelloWorld.js';
 consolel.log(helloWorld());
 ```
 
-:exclamation: Node.js does not currently support this syntax yet. Starting with Node.js version 8.5.0 support is available behind an [experimental flag](http://2ality.com/2017/09/native-esm-node.html). ES modules will available by default in Node.js 10.
+:exclamation: Node.js does not currently support this syntax by default yet. Starting with Node.js version 8.5.0 support is available behind an [experimental flag](http://2ality.com/2017/09/native-esm-node.html). ES modules will available by default in Node.js 10.
 
 ### 2.3.0 - ECMAScript 6 block scope with let/const
 
