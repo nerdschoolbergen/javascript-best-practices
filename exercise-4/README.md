@@ -2,8 +2,8 @@
 
 You will learn about:
 
- - Lexical scope and this
- - How to avoid polluting the global scope
+- Lexical scope and this
+- How to avoid polluting the global scope
 
 ## Required software and tools for this exercise
 
@@ -100,6 +100,7 @@ function greet(name) {
 }
 greet.call({ hi: 'hei' }, 'eirik');
 ```
+
 (Yes `greet` is a function which can be invoked as `greet()` but it also has other functions we can invoke by treating it like an object, such as `greet.call()`, `greet.apply()`, and `greet.bind()`. What can we say, JavaScript is weird...)
 
 - We pass a new object as the first parameter to `call`. This will be the `this` context while in the `greet` function.
@@ -379,7 +380,6 @@ ESLint will complain about the `let` keyword. This is because we need to configu
 
 ```diff
 {
-    "ecmaVersion": 6
 + "parserOptions": {
 +   "ecmaVersion": 2015
 + },
@@ -398,6 +398,7 @@ ESLint will complain about the `let` keyword. This is because we need to configu
 :book: The code throws an `ReferenceError` because we defined the `x` variable the block scope of an `if` statement.
 
 Here is a simpler version:
+
 ```JavaScript
 (function() {
   {
@@ -413,5 +414,4 @@ Here is a simpler version:
 
 :book: As we mentioned about in exercise 3, the `const` keyword let's you define variables that cannot be _reassigned_. It also behaves the same as `let` when it comes to scoping.
 
-**Best practice:**
-- If you are using ES6 (or newer) and you are not using modules, use `let` and `const` for encapsulation instead of IIFEs.
+:exclamation: **Best practice:** If you are using ES6 (or newer) and you are not using modules, _use `let` and `const` for encapsulation instead of IIFEs_.
