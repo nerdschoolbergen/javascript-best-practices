@@ -23,7 +23,7 @@ A basic understanding of JavaScript and it's syntax is required to get the most 
 
 <img src="images/nodejs-logo.png" width="100"/>
 
-To install Node.js, download and install the latest _Long Term Service (LTS)_ release from [nodejs.org](https://nodejs.org).
+To install Node.js, download the latest _Long Term Service (LTS)_ release from [nodejs.org](https://nodejs.org).
 
 ### Installing Visual Studio Code
 
