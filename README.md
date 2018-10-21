@@ -11,7 +11,7 @@ The focus of this workshop is best practices for JavaScript development. Rather 
 
 ## Audience
 
-Basic understanding of JavaScript and it's syntax is required to get the most out of this workshop.
+A basic understanding of JavaScript and it's syntax is required to get the most out of this workshop.
 
 ## What you need
 - [Visual Studio Code](https://code.visualstudio.com/)
