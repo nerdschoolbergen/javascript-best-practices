@@ -51,9 +51,7 @@ v8.12.0
 
 ### Exercise files
 
-:pencil2: If you know how to use git, clone the [GitHub repository](https://github.com/nerdschoolbergen/javascript-best-practices) to a folder on your computer.
-
-:pencil2: If you don't know how to use git, open the [GitHub repository](https://github.com/nerdschoolbergen/javascript-best-practices), then click the green "Clone or download" button and then click on "Download ZIP". Unzip the downloaded file to a folder on your computer.
+:pencil2: Start by cloning this repository into a folder on your computer. If you've never used git before, you can alternatively click the green "Clone or download" button and then click on "Download ZIP". Unzip the downloaded file to a folder on your computer.
 
 #### Folder structure
 
