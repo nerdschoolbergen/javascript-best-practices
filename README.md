@@ -9,6 +9,10 @@ Best practices for JavaScript development
 ## Focus of this workshop
 The focus of this workshop is best practices for JavaScript development. Rather than laying out "rules" to follow we are going to take a look a the _why_ behind the best practices, so that you can decide for yourself what's best for you.
 
+## Audience
+
+Basic understanding of JavaScript and it's syntax is required to get the most out of this workshop.
+
 ## What you need
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
