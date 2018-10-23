@@ -292,7 +292,7 @@ For example:
 ```js
 3 + 4; // This is an expression even if it is not assigned to a variable
 3 + (4 * 4); // This is an example of using the grouping operator
-console.log((4/3)+2) // The expression resolved to a velue before it is logged
+console.log((4/3)+2) // The expression resolved to a value before it is logged
 ```
 
 :book: The `function` keyword we used to create functions earlier can be used to define a function _inside_ an expression:
