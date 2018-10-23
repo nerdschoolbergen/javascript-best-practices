@@ -360,7 +360,7 @@ Importing the module:
 ```js
 // Main.js
 import helloWorld from './HelloWorld.js';
-consolel.log(helloWorld());
+console.log(helloWorld());
 ```
 
 :exclamation: Node.js does not currently support this syntax by default yet. Starting with Node.js version 8.5.0 support is available behind an [experimental flag](http://2ality.com/2017/09/native-esm-node.html). ES modules will available by default in Node.js 10.
