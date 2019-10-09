@@ -34,7 +34,7 @@ node -v
 This should output something like this if Node is correctly installed:
 
 ```bash
-v8.12.0
+v10.16.3
 ```
 
 ### Visual Studio Code
