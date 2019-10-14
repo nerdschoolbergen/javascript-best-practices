@@ -80,7 +80,7 @@ v10.16.3
 
 :book: We need to open the folder containing the git repository you've just cloned/downloaded to your computer ("javascript-best-practices") as a _workspace folder_ in VS Code.
 
-:pencil2: Choose _File -> Open_ from the VS Code menu and select the `javascript-best-practices` repository directory on your computer to set this folder as your _workspace folder_. Make sure you select the directory, not a file inside the folder.
+:pencil2: Choose _File -> Open_ from the VS Code menu and select the `javascript-best-practices` repository directory on your computer to set this folder as your _workspace folder_. _Make sure you select the directory, not a file inside the folder._
 
 ### Editing files in the workspace
 
@@ -106,7 +106,7 @@ There are three ASI rules:
 
 ### 1.1.1 - ASI Rule #1
 
-:book: Rule #1 from the JavaScript spesification states:
+:book: Rule #1 from the [JavaScript spesification](https://www.ecma-international.org/ecma-262/5.1/#sec-7.9.1) states:
 > When, as the program is parsed from left to right, a token (called the offending token) is encountered that is not allowed by any production of the grammar, then a semicolon is automatically inserted before the offending token if one or more of the following conditions is true:
 > - The offending token is separated from the previous token by at lest one _LineTerminator_.
 > - The offending token is `}`.
@@ -114,10 +114,10 @@ There are three ASI rules:
 What does this mean? Let's break down the terms:
 
 - **Parsing**: The process of converting your code into a _syntax tree_ before compiling it.
-- **Token**: A token is a piece of code, for example `var`, `x`, `=`, and so on
-- **Offending token**: A piece of code that cannot be placed after the previous piece of code
-- **Grammar**: The syntax rules that JavaScript follows
-- **LineTerminator**: A line break in the code (new line)
+- **Token**: A token is a piece of code, for example `var`, `x`, `=`, and so on.
+- **Offending token**: A piece of code that cannot be placed after the previous piece of code.
+- **Grammar**: The syntax rules that JavaScript follows.
+- **LineTerminator**: A line break in the code (new line).
 
 Let's name each of the conditions of the first rule a and b:
 
@@ -262,7 +262,7 @@ console.log('Result:', addTwoNumbers(1,2))
 
 :bulb: For reference: [The ECMAScript 5.1 spec - ASI rules](http://www.ecma-international.org/ecma-262/5.1/#sec-7.9)
 
-Now on to some more interesting stuff.
+Now on to some more interesting stuff!
 
 ## 1.2 - Linting
 
@@ -277,7 +277,7 @@ There are several JavaScript linting tools available, for this workshop we have 
 
 ### 1.2.1 - ESLint overview
 
-<img src="https://camo.githubusercontent.com/e69fbfc8dc529fda880b1890f43fa0aec6ab5cb6/687474703a2f2f65736c696e742e6f72672f696d672f6c6f676f2e737667" width="100"/>
+<img src="../images/eslint-logo.png" width="100"/>
 
 :book: ESLint will analyse your JavaScript code and return a set of errors or warnings depending on which linting rules you have configured it to use.
 
@@ -304,7 +304,7 @@ ESLint divides it's rules into several categories. From the [rules documentation
 - In a browser
 - ...and more
 
-For this workshop we are going to run ESLint in VS Code via an editor extension called [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+For this workshop we are going to run ESLint in VS Code via an editor extension called [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
 :pencil2: The _ESlint extension_ for VS Code requires that you install the _ESLint linter_ globally or inside the workspace folder that contains the JavaScript code to be validated. For ease of use we are going to do the former.
 
@@ -335,7 +335,7 @@ eslint [options] file.js [file.js] [dir]
 
 ![Extensions view icon](https://code.visualstudio.com/assets/docs/editor/extension-gallery/extensions-view-icon.png)
 
-:pencil2: Type in "Eslint" into  the search box at the top of the Extensions view and select the _ESLint extension_ in the search results. Install the extension by clicking the green "Install" button and then click the "Reload" button after installation has finished.
+:pencil2: Type in "Eslint" into  the search box at the top of the Extensions view and select the _ESLint extension_ in the search results. Install the extension by clicking the green "Install" button.
 
 ![Install ESLint extension](../images/ex1-installing-eslint-vscode.png)
 
@@ -414,7 +414,7 @@ function myFunctionReturningAnObject()
 }
 ```
 
-:exclamation: Remember to insert a comma at the end of the `"semi"`-line!
+:exclamation: Remember to insert a comma at the end of the `"semi"`-line above!
 
 :book: The [`brace style`](https://eslint.org/docs/rules/brace-style) rule defaults to a style called _one true brace style_, which is the most common brace style in JavaScript and corresponds with how the return statement is formatted.
 
@@ -425,7 +425,7 @@ notify you that the opening curly braces for the functions are misplaced.
 
 :exclamation: **Best practice:** _Use the one true brace style_ for braces in your code.
 
-## Best practices summary
+## Exercise 1 best practices summary
 
 So far, we've covered the following:
 
