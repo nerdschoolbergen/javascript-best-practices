@@ -89,7 +89,7 @@ In strict mode, the value of `this` inside a function is whatever it was set to 
 
 ### 1.1.0 `call()`
 
-So to make `this` not be undefined, we must take a look at the built-in prototype functions `call` and `apply`. For simplicity, let's just use the `call` function today.
+So to make `this` not be undefined, we must take a look at the built-in prototype functions [`call`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) and [`apply`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply). For simplicity, let's just use the `call` function today.
 
 All functions in JavaScript inherits certain other functions from the `Function.prototype` function in the language. This might seem confusing, but for now just try to acknowledge that functions can have functions in JavaScript. Yes, it's weird.
 
@@ -128,7 +128,9 @@ greet = greet.bind({ hi: 'helloooo' });
 greet('eirik');
 ```
 
-:pencil2: Make a new function and use `bind` to set it's `this` context.  
+:pencil2: Make a new function and use `bind` to set it's `this` context. 
+
+> You can read more about `bind` [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind).
 
 ### 1.1.3 Accessing `this` in sub-functions
 
@@ -332,11 +334,11 @@ This is because the IIFE creates a new scope inside it, where you can declare al
 
 :exclamation: **Best practice:** Use IIFEs around your code to prevent polluting the global scope.
 
-### 2.2.0 - ECMAScript 6 modules
+### 2.2.0 - ES6/ES2015 modules
 
 > :bulb: This feature is only just beginning to be implemented in browsers natively at this time. It is implemented in many transpilers, such as TypeScript and Babel, and bundlers such as Rollup) and Webpack.
 
-:book: ECMAScript 6 has a feature called modules, which helps you structure code in an efficient way.
+:book: ES6/ES2015 has a feature called modules, which helps you structure code in an efficient way.
 
 A module...
 
@@ -365,9 +367,9 @@ consolel.log(helloWorld());
 
 :exclamation: Node.js does not currently support this syntax by default yet. Starting with Node.js version 8.5.0 support is available behind an [experimental flag](http://2ality.com/2017/09/native-esm-node.html). ES modules will available by default in Node.js 10.
 
-### 2.3.0 - ECMAScript 6 block scope with let/const
+### 2.3.0 - ES6/ES2015 block scope with let/const
 
-:book: Another feature in ECMASCript 6 is the `let` and `const` keyword for declaring variables.
+:book: Another feature in ES6/ES2015 is the `let` and `const` keyword for declaring variables.
 
 #### 2.3.1.0 - let
 
@@ -424,7 +426,7 @@ Here is a simpler version:
 
 :book: As we mentioned about in exercise 3, the `const` keyword let's you define variables that cannot be _reassigned_. It also behaves the same as `let` when it comes to scoping.
 
-:exclamation: **Best practice:** If you are using ES6 (or newer) and you are not using modules, _use `let` and `const` for encapsulation instead of IIFEs_.
+:exclamation: **Best practice:** If you are using ES6/ES2015 (or newer) and you are not using modules, _use `let` and `const` for encapsulation instead of IIFEs_.
 
 ## Further reading
 
