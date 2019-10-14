@@ -364,4 +364,10 @@ We can force the use of Strict mode in ESLint by adding the [`strict`](https://e
 
 :pencil2: Try removing the `use strict;` directive from  `exercise-3.js` and see what happens.
 
+## Exercise 3 best practices summary
+
+- Always put variable declarations at the top of the scope where you declare them to avoid accidental hoisting.
+- Use `let` and `const` if using ES6/ES2015.
+- Use strict mode to avoid hoisting problems.
+
 ### [Go to exercise 4 ==>](../exercise-4/README.md)

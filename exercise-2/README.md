@@ -179,4 +179,11 @@ else {
 
 :exclamation: **Best practice:** Use explicit null-or-undefined checks if you're checking if a variable has any value at all. Use `if (x) { ... }` truthy/falsy check if you know this is the behavior you need.
 
+## Exercise 2 best practices summary
+
+In this exercise we learned:
+
+- Always use strict equality instead of loose equality to prevent unintended behaviour
+- Use explicit null-or-undefined checks if you're checking if a variable has any value at all. Use `if (x) { ... }` truthy/falsy check if you know this is the behavior you need.
+
 ### [Go to exercise 3 ==>](../exercise-3/README.md)
