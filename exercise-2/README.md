@@ -1,16 +1,19 @@
 # Exercise 2 - Equality
 
 You will learn about:
- - Equality
- - Truthy/falsy values
+
+- Equality
+- Truthy/falsy values
 
 ## Required software and tools for this exercise
+
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
 ## 1.1 - Equality
 
 :book: We often need to compare values when programming in JavaScript. JavaScript provides two types of value-comparison operations:
+
 - Loose equality using `==` (also called "double equals")
 - Strict equality using `===` (also called "triple equals")
 
@@ -19,6 +22,7 @@ These operators both takes one operand on the left and right side and returns a 
 ## 1.1.1 - Loose equality
 
 Consider the following code:
+
 ```js
 var a = 1;
 var b = '1';
@@ -41,6 +45,7 @@ if(areEqual(a, b)) {
 Before comparing the two values on each side of the operator, it looks at the data types.
 
 :bulb: JavaScript has seven data types:
+
 - Boolean (`true`, `false`)
 - Null (`null`)
 - Undefined (`undefined`)
@@ -56,6 +61,7 @@ Before comparing the two values on each side of the operator, it looks at the da
 This behaviour can have some some potentially unintended effects.
 
 Let's pretend we are going to compare a number and a boolean:
+
 ```js
 var a = 0;
 var b = false;
@@ -90,9 +96,10 @@ if(areEqual(a, b)) {
 |`'\t\r\n'`|`0`|
 |`[]`|`null`|
 
-# 1.1.2 - Strict equality
+## 1.1.2 - Strict equality
 
 :book: We can perform a strict equality comparison using `===`. The strict equality operator has two conditions. In order to match, operands need to:
+
 - be of the _same type_
 - have the same value
 
@@ -122,7 +129,7 @@ if(areEqual(a, b)) {
 }
 ```
 
-:exclamation: Remember the trailing commas at the end of the third and fourth line.
+:exclamation: Remember the trailing commas at the end of the third and fourth line above.
 
 :pencil2: Open `exercise-2.js` and add the following code:
 
@@ -140,9 +147,10 @@ The linter should alert you that you have an error related to the `eqeqeq` rule 
 
 > :book: From MDN: In JavaScript, a _truthy_ value is a value that is considered true when evaluated in a Boolean context. All values are truthy unless they are defined as _falsy_.
 
-In other words, truthy values are true-_ish_ and falsy values are false-_ish_. This is one of the major gotchas in JavaScript.
+In other words, truthy values are true-_ish_ and falsy values are false-_ish_. This is one of the major gotchas in JavaScript.*
 
 Consider the following code:
+
 ```js
 var x = false;
 if (x) {
@@ -170,7 +178,5 @@ else {
 :bulb: the `if(x)` boolean test is behind the scenes actually doing a loose equality comparison: `ìf(x == true)`.
 
 :exclamation: **Best practice:** Use explicit null-or-undefined checks if you're checking if a variable has any value at all. Use `if (x) { ... }` truthy/falsy check if you know this is the behavior you need.
-
-
 
 ### [Go to exercise 3 ==>](../exercise-3/README.md)

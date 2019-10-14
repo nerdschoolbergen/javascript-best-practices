@@ -1,11 +1,13 @@
 # Exercise 3 - Hoisting and scope
 
 You will learn about:
- - Variables and hoisting
- - Function scope and hoisting
- - Strict mode
+
+- Variables and hoisting
+- Function scope and hoisting
+- Strict mode
 
 ## Required software and tools for this exercise
+
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js](https://nodejs.org)
 
@@ -16,6 +18,7 @@ You will learn about:
 :book: Let's have a look at how defining variables work in JavaScript.
 
 Consider the following code:
+
 ```js
 console.log(myVariable);
 ```
@@ -42,6 +45,7 @@ console.log(myVariable);
 ## 1.0.2 - Variable hoisting
 
 :pencil2: Let's try moving the `myVariable` definition to the buttom:
+
 ```js
 console.log(myVariable);
 var myVariable;
@@ -52,6 +56,7 @@ var myVariable;
 :pencil2: Try modifying the code in `exercise-3.js` and run it in Node.js
 
 :exclamation: Why does it still behave the same as before we moved the variable declaration? Because JavaScript "**hoists**" or lifts all variable _creations_ to the top of the current scope before running the code. The `myVariable` variable will be created at the top of the current scope, and set to `undefined`. This is called _variable hoisting_ or just _hoisting_.
+
 ```js
 var myVariable; // hoisted variable, created By JavaScript
 console.log(myVariable);
@@ -88,6 +93,7 @@ Next we are going to look at why this can cause problems when dealing with funct
 :book: Each time you create a function in JavaScript, a _scope_ is also created.
 
 Consider the following code that prints two different variables, one declared inside the function and one outside:
+
 ```js
 var myMessage = 'A message';
 
@@ -130,6 +136,7 @@ console.log(anotherMessage); // add this line
 :book: As we saw in the last task, we can access variables created _outside_ a function.
 
 Let's try changing the code a bit by assigning a value to `myMessage` inside the function and logging out the value of `myMessage` in the last line. Remember to remove the second `console.log()` statement inside the function as well:
+
 ```js
 var myMessage = 'A message';
 
@@ -188,6 +195,7 @@ console.log(myMessage);
 :exclamation: **Best practice:** Always put variable declarations at the top of the scope where you declare them to avoid accidental hoisting. Assignment can be done at a later time. Never use variables before defining them.
 
 Best practice #4 example:
+
 ```js
 var a;
 var b;
@@ -213,11 +221,13 @@ console.log(b);
 ## 2.3.0 - Linting rules to avoid accidental hoisting
 
 :book: To avoid accidental variable hoisting we can configure ESLint to enforce this via these two rules:
--  [`no-use-before-define`](https://eslint.org/docs/rules/no-use-before-define)
+
+- [`no-use-before-define`](https://eslint.org/docs/rules/no-use-before-define)
 - [`vars-on-top`](https://eslint.org/docs/rules/vars-on-top)
 
-- The `no-use-before-define` rule will warn when it encounters a reference to a variable that has not yet been declared.
-- The `vars-on-top` rule will warn when it encounters a variable declaration that is not on top of its scope.
+The `no-use-before-define` rule will warn when it encounters a reference to a variable that has not yet been declared.
+
+The `vars-on-top` rule will warn when it encounters a variable declaration that is not on top of its scope.
 
 :pencil2: Try these rules out by adding them to the `exercise-3\.eslintrc.json` file:
 
@@ -254,13 +264,14 @@ function myFunc(input) {
 
 ## 2.4.0 - `let` and `const`
 
-ECMAScript 6 has a few new keywords for variable declaration: `let` and `const`.
+ES6/ES2015 has a few new keywords for variable declaration: `let` and `const`.
 
 `let` variables is simply just like `var` except there's _no hoisting at all_ and the scope is at block level (new in ES6/ES2015). More on this in exercise 4.
 
 `const` is pretty much exactly what you think: define a variable as a constant, and therefore unchangeable. Since JavaScript can be a pretty volatile language that allows most values to be overwritten at any time, `const` has been warmly welcomed by the community and the rule in many modern code bases is to always use `const` for everything (also function declarations using function expressions), unless you explicitly need to mutate (change) a value after it has been defined. Typically we prefer to create a new variable (using `const`) instead of mutating the existing one.
 
 **Best practice for ES6/ES2015 variable use:**
+
 - Use `const` by default.
 - Use `let` if you have to reassign a variable.
 - `let` is the new `var`, except in cases where you really want a variable to be in the function scope.
@@ -329,7 +340,6 @@ console.log(stringToPrint);
 :pencil2: Run the code in Node.js.
 
 :book: The code now throws an `ReferenceError` when accessing a variable that has not been defined.
-
 
 :exclamation: **Best practice:** Use strict mode to avoid hoisting problems
 
