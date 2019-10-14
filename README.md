@@ -4,7 +4,7 @@
 
 Best practices for JavaScript development
 
-## [Open presentation slides](https://docs.google.com/presentation/d/1KCTv-KHXHo6dpXpUPCybZmMz_F6VvZSzFnLrmpnyZBI/edit?usp=sharing)
+## [Open presentation slides](https://docs.google.com/presentation/d/1bqWOwNlzkLsnybM634-tgEdQEt-0j8Hg2Zzu2k6u31Y/edit?usp=sharing)
 
 ## Focus of this workshop
 
