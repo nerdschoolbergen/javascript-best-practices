@@ -37,7 +37,9 @@ To install Visual Studio Code, please see the installation instructions for your
 
 ## How to get started
 
-- Start by cloning this repository into a folder on your computer. If you've never used git before, you can alternatively click the green "Clone or download" button and then click on "Download ZIP". Unzip the downloaded file to a folder on your computer.
+- Start by cloning this repository into a folder on your computer. If you've never used git before, you can alternatively click the green "Clone or download" button and then click on "Download ZIP". Unzip the downloaded file to a folder on your computer:
+
+<img src="images/github_download_zip.png" />
 
 - Although you have this `README.md` file on your computer it's easier to read it on GitHub, so we recommend you keep this page open with the exercise tasks.
 
