@@ -45,7 +45,7 @@ To install Visual Studio Code, please see the installation instructions for your
 
 ## Exercises
 
-This repository contains a set of exercises organized in folders. Each folder contains a `README.md` describing the exercise
+This repository contains a set of exercises organized in folders. Each folder contains a `README.md` describing the exercise.
 
 - [Exercise 1 - Syntax](exercise-1/) (start here)
 - [Exercise 2 - Equality](exercise-2/)
