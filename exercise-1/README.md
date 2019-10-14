@@ -391,7 +391,7 @@ function myFunctionReturningAnObject()
 {
   return
   {
-    name: "Mad Max"
+    name: "Mad Max",
     age: 35
   };
 }
